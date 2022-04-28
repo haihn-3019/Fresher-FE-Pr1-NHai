@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.form__cta {
+  display: flex;
+  gap: 5rem;
+
+  & > * {
+    display: flex;
+    align-items: center;
+  }
+
+  @include respond-to("small") {
+    margin-top: 3rem;
+  }
+}

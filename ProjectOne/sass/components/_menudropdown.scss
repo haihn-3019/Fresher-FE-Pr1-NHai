@@ -1,0 +1,68 @@
+@use "../layout/grid" as *;
+@use "../abstracts" as *;
+
+.dropdown-menu.show {
+  min-width: 37vw;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding: 2rem;
+  border: 1px solid $color-green;
+  position: absolute;
+
+  @include respond-to("small") {
+    transform: none;
+    flex-direction: column;
+  }
+
+  @include respond-to("medium") {
+    transform: translate(-14rem, 0);
+  }
+
+  @include respond-to("large") {
+    transform: translate(-14rem, 1rem);
+  }
+}
+
+.dropdown-menu.show::before {
+  @include triangle-up(
+    $border-bottom: 1rem,
+    $border-left: 0.75rem,
+    $color: $color-green
+  );
+  content: " ";
+  position: absolute;
+  left: 50%;
+  top: -3%;
+
+  @include respond-to("medium") {
+    left: 40%;
+  }
+
+  @include respond-to("small") {
+    left: -1.2%;
+  }
+  @include respond-to("medium") {
+    left: 40%;
+  }
+}
+
+.menu {
+  &__title {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $color-gray-1;
+    padding-bottom: 1rem;
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__item:not(:first-child) {
+    margin: 1rem 0 0 0rem;
+  }
+
+  &__link {
+    padding: 0 !important;
+  }
+}

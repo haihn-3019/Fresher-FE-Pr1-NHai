@@ -1,0 +1,66 @@
+$breakpoints: (
+  "small": (
+    min-width: 770px,
+  ),
+  "medium": (
+    min-width: 990px,
+  ),
+  "large": (
+    min-width: 1200px,
+  ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin section-page {
+  grid-column: [center-start] / [col-end];
+}
+
+@mixin center-section {
+  grid-column: center-start / center-end;
+}
+
+@mixin full-section {
+  grid-column: full-start / full-end;
+}
+
+@mixin triangle-up(
+  $border-bottom: 10rem,
+  $border-left: 5rem,
+  $border-right: $border-left,
+  $color: red
+) {
+  width: 0;
+  height: 0;
+  border-left: $border-left solid transparent;
+  border-right: $border-right solid transparent;
+  border-bottom: $border-bottom solid $color;
+}
+
+@mixin shape($width: 2rem, $height: $width, $border-radius: 50%) {
+  border-radius: $border-radius;
+  width: $width;
+  height: $height;
+}
+
+@mixin flexbox($direction: row, $wrap: wrap, $basis: auto){
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  flex-basis: $basis;
+}
+
