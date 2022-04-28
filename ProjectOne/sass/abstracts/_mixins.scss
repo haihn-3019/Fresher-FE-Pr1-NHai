@@ -1,0 +1,30 @@
+@mixin section-page {
+  grid-column: [center-start] / [col-end];
+}
+
+@mixin center-section {
+  grid-column: center-start / center-end;
+}
+
+@mixin full-section {
+  grid-column: full-start / full-end;
+}
+
+@mixin triangle-up(
+  $border-bottom: 10rem,
+  $border-left: 5rem,
+  $border-right: $border-left,
+  $color: red
+) {
+  width: 0;
+  height: 0;
+  border-left: $border-left solid transparent;
+  border-right: $border-right solid transparent;
+  border-bottom: $border-bottom solid $color;
+}
+
+@mixin shape($width: 2rem, $height: $width, $border-radius: 50%) {
+  border-radius: $border-radius;
+  width: $width;
+  height: $height;
+}
