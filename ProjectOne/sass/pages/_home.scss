@@ -18,13 +18,11 @@
     width: 100%;
   }
 
-  // display: grid;
-  // grid-template-rows: 1fr min-content;
-  // padding: 2rem
-
   &__content {
     grid-row: 1 / 2;
     position: relative;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__content-box {
@@ -59,11 +57,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    // justify-items: center;
-
-    // @media screen and (max-width: 100rem) {
-    //   grid-template-columns: repeat(3, max-content);
-    // }
 
     &-card {
       text-align: center;

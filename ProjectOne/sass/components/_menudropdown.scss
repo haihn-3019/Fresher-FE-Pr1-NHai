@@ -2,12 +2,7 @@
 @use "../abstracts" as *;
 
 .dropdown-menu.show {
-  // @include grid-3-cols($size: auto-fit);
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   min-width: 37vw;
-  // font-size: 1.2rem;
-  // column-gap: 5rem;
   display: flex;
   flex-direction: row;
   gap: 3rem;
@@ -15,17 +10,17 @@
   border: 1px solid $color-green;
   position: absolute;
 
-  @media screen and (min-width: 1200px) {
-    transform: translate(-14rem, 1rem);
+  @include respond-to("small") {
+    transform: none;
+    flex-direction: column;
   }
 
-  @media screen and (max-width: 1200px) {
+  @include respond-to("medium") {
     transform: translate(-14rem, 0);
   }
 
-  @media screen and (max-width: 990px) {
-    transform: none;
-    flex-direction: column;
+  @include respond-to("large") {
+    transform: translate(-14rem, 1rem);
   }
 }
 
@@ -40,18 +35,16 @@
   left: 50%;
   top: -3%;
 
-  @media screen and (min-width: 990px) {
+  @include respond-to("medium") {
     left: 40%;
   }
 
-  @media screen and (max-width: 990px) {
-    top: -1%;
+  @include respond-to("small") {
+    left: -1.2%;
   }
-
-  @media screen and (max-width: 770px) {
-    top: -1.2%;
+  @include respond-to("medium") {
+    left: 40%;
   }
-  // transform: translate(-700%, -98%);
 }
 
 .menu {
@@ -61,15 +54,6 @@
     padding-bottom: 1rem;
   }
 
-  // &-1 {
-  //   grid-column: center-start / col-start 2;
-  // }
-  // &-2 {
-  //   grid-column: col-start 2 / col-start 3;
-  // }
-  // &-3 {
-  //   grid-column: col-start 3 / center-end;
-  // }
   &__item {
     list-style-type: none;
   }

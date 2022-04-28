@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 .navbar {
-  z-index: 2;
+  z-index: $z-navbar;
   grid-row: 1 / 2;
 
   &-nav {
@@ -27,7 +27,7 @@
     align-items: center;
   }
 
-  @media screen and (max-width: 990px) {
+  @include respond-to("small") {
     &-collapse.show {
       margin-top: 2rem;
     }

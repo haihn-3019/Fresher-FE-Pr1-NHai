@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .form__cta {
   display: flex;
   gap: 5rem;
@@ -7,7 +9,7 @@
     align-items: center;
   }
 
-  @media screen and (max-width: 990px) {
+  @include respond-to("small") {
     margin-top: 3rem;
   }
 }
