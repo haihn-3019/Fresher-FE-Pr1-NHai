@@ -28,3 +28,16 @@
   width: $width;
   height: $height;
 }
+
+@mixin flexbox(
+  $direction: row,
+  $wrap: nowrap,
+  $basis: auto,
+  $align-items: flex-start
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  flex-basis: $basis;
+  align-items: $align-items;
+}

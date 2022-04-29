@@ -1,5 +1,5 @@
 @use "../abstracts" as *;
-@use "../base/typography" as *;
+@use "../base" as *;
 
 .section-page {
   @include full-section;
@@ -72,7 +72,72 @@
 }
 
 .commercial {
-  background-color: cadetblue;
+  &-images {
+    @include flexbox($wrap: wrap);
+  }
+
+  &-image {
+    display: block;
+    width: 50%;
+  }
+
+  &-quotes {
+    @include flexbox($align-items: center);
+    padding: 3rem 0;
+  }
+}
+
+.quotes {
+  &__left {
+    @include flexbox;
+    
+    &-box {
+      margin-left: 5rem;
+    }
+  }
+  
+  &__right {
+    width: 90%;
+  }
+
+  &__image {
+    display: block;
+    transform: translateX(-10rem);
+  }
+
+  &__avatar {
+    height: 10rem;
+    display: block;
+    border: 2px solid #cbd4b3;
+    border-radius: 50%;
+    padding: 0.8rem;
+  }
+
+  &__para {
+    line-height: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  &__role {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  &__dots {
+    @include flexbox;
+    gap: 1rem;
+  }
+
+  &__dot {
+    background-color: $color-black;
+    height: 0.5rem;
+    width: 0.5rem;
+    margin-top: 2rem;
+
+    &-2 {
+      background-color: rgb(115, 115, 115);
+    }
+  }
 }
 
 .featured-products {

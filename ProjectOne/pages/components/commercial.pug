@@ -1,2 +1,31 @@
+mixin imageItems
+  - const images = ["5.png", "6.png", "7.png", "8.png"];
+  each image in images 
+    img.commercial-image(src=`/assets/images/commercial/${image}`, alt="image")
+
+mixin threedots
+  each value in [1,2,3]
+    .quotes__dot-#{value}
+
+mixin quotes
+  - const para = ' " Vẫn là vẻ bề ngoài vô cùng đơn giản với các tông màu trắng, hồng làm chủ đạo nhưng lại tạo ra sức hút kỳ lạ với những ai cầm trên tay sản phẩm ấy! Với công nghệ cải tiền mới nhất, hãng Rohto " ';
+  - const url = "/assets/images/commercial";
+  - const avatar_url = `${url}/10.png`;
+  - const image_url = `${url}/9.png`;
+  - const role = "TUTILE _Giám đốc phát triển sản phẩm";
+    .quotes__left
+      img.quotes__avatar(src=`${avatar_url}`, alt="avatar")
+      .quotes__left-box
+        p.quotes__para= para
+        span.quotes__role= role
+        .quotes__dots
+          +threedots
+    .quotes__right
+      img.quotes__image(src=`${image_url}`, alt="avatar")
+
 mixin commercial
-  .section-page.commercial commercial
+  section.section-page.commercial
+    .commercial-images
+      +imageItems
+    .commercial-quotes
+      +quotes
