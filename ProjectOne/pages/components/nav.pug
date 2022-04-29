@@ -1,0 +1,34 @@
+include productItem
+
+- const navItems = ["Trang chủ", "Giới thiệu", "Sản phẩm", "Tin tức", "Bản đồ", "Liên hệ"];
+- const skincareProducts = ["Áo khoác", "Bộ áo liền quần", "Dresses", "Quần Váy", "Quần short", "Quần jean", "Đồ đan", "Áo nỉ"];
+-
+  const perfume = [
+      "Nước Hoa", "Áo cánh / Áo sơ mi", "Túi xách & Balô", "Khăn quàng cổ và Foulards", "Dệt kim Hats & Gloves", "Vớ & Socks", "Jewerly",
+        "Bị bảo vệ", "Giày"
+    ];
+
+- const jewerly = perfume;
+
+-
+  const productsItem = {
+      "Dưỡng da": skincareProducts,
+      "Nước hoa": perfume,
+      "Trang sức": jewerly
+  };
+
+mixin otherItems(item= "Trang chủ")
+  li.nav-item
+    if item == "Trang chủ"
+      a.nav-link.active(aria-current="page", href="#") Trang Chủ
+    else
+      a.nav-link(href="#")= item
+
+mixin navWeb
+  each item in navItems
+    if item == "Sản phẩm"
+      +itemDropdown(item, productsItem)
+    else
+      +otherItems(item)
+
+//- mixin productsItemDropdown

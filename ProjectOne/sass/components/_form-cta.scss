@@ -1,0 +1,13 @@
+.form__cta {
+  display: flex;
+  gap: 5rem;
+
+  & > * {
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 990px) {
+    margin-top: 3rem;
+  }
+}
