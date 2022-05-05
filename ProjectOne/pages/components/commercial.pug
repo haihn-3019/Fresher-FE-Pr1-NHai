@@ -5,7 +5,7 @@ mixin imageItems
 
 mixin threedots
   each value in [1,2,3]
-    .quotes__dot-#{value}
+    div(class=`quotes__dot-${value}`)
 
 mixin quotes
   - const para = ' " Vẫn là vẻ bề ngoài vô cùng đơn giản với các tông màu trắng, hồng làm chủ đạo nhưng lại tạo ra sức hút kỳ lạ với những ai cầm trên tay sản phẩm ấy! Với công nghệ cải tiền mới nhất, hãng Rohto " ';

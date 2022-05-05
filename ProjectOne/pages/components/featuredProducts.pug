@@ -1,2 +1,83 @@
+mixin product
+  -
+    const products = [
+      {
+        image : '/assets/images/featured-production/12.png',
+        name: 'TYFFANY',
+        title: 'Mỹ phẩm châu Âu',
+        price:  '355.000đ',
+        priceOld: 0
+      },
+      {
+        image : '/assets/images/featured-production/13.png',
+        name: 'OHUI',
+        title: 'Mỹ phẩm châu Âu',
+        price: '355.000đ',
+        priceOld: 0,
+      },
+      {
+        image : '/assets/images/featured-production/14.png',
+        name: 'HOME',
+        title: 'Mỹ phẩm châu Âu',
+        price: '355.000đ',
+        priceOld:  '450.000đ'
+      },
+      {
+        image : '/assets/images/featured-production/15.png',
+        name: 'SARVON',
+        title: 'Mỹ phẩm châu Âu',
+        price: ' 355.000 đ',
+        priceOld: 0,
+      },
+      {
+        image : '/assets/images/featured-production/16.png',
+        name: 'TYFFAN',
+        title: 'Mỹ phẩm châu Âu',
+        price: '355.000đ',
+        priceOld: 0,
+      },
+      {
+        image : '/assets/images/featured-production/17.png',
+        name: 'OHUI',
+        title: 'Mỹ phẩm châu Âu',
+        price: '355.000đ',
+        priceOld: 0,
+      }
+    ];
+  each product in products
+    .featured-products__product
+      img.featured-products__image(srcset=product.image, 2x, alt=product.name)
+      .featured-products__info
+        .featured-products__name= product.name
+        .featured-products__type= product.title
+        hr
+        .featured-products__price= product.price
+      .featured-products__cta
+        .featured-products__buy Mua hàng
+        i.fa-solid.fa-heart.featured-products__heart
+        i.fa-solid.fa-rotate-left.featured-products__reset
+
+mixin typeItems
+  - const types = ["Mỹ phẩm", "Chăm sóc da", "Dành cho tóc", "Nước hoa", "Trang sức", "Quà tặng"];
+  each type in types
+    li.title__type= type
+
+mixin categoryItems
+  - const categories = ["Sản phẩm mới", "Sản phẩm bán chạy", "Sản phẩm đặc biệt"];
+  each category, index in categories
+    - let i = index + 1;
+    li(class=`title__category title__category-${i}`)= category
+
 mixin featuredProducts
-  .section-page.featured-products Featured Products
+  .section-page.featured-products
+    .featured-products__title
+      .title__categories
+        ul
+          +categoryItems
+      .title__types
+        ul
+          +typeItems
+    .featured-products__products
+      +product
+    .button-left
+    .button-right
