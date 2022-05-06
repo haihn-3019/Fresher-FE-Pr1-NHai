@@ -1,5 +1,5 @@
 @mixin section-page {
-  grid-column: [center-start] / [col-end];
+  grid-column: center-start / col-end;
 }
 
 @mixin center-section {
@@ -45,10 +45,10 @@
 
 @mixin flexbox(
   $direction: row,
-  $wrap: nowrap,
+  $wrap: wrap,
   $basis: auto,
   $align-items: flex-start,
-  $justify-content: flex-start
+  $justify-content: space-between
 ) {
   display: flex;
   flex-direction: $direction;
@@ -86,6 +86,7 @@
   font-size: $font-size;
   letter-spacing: $letter-spacing;
   font-style: $font-style;
+  color: $color;
 }
 
 @mixin link(

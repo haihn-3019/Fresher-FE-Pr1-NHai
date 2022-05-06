@@ -13,12 +13,12 @@ html {
   box-sizing: border-box;
 }
 
-.container {
+.my-container {
   @include grid-8-cols;
-  width: 100vw;
   font-size: 1.5rem;
 }
 
 ul {
   padding: 0;
+  margin: 0;
 }

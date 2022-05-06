@@ -2,12 +2,7 @@
 @use "../abstracts" as *;
 
 .dropdown-menu.show {
-  // @include grid-3-cols($size: auto-fit);
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   min-width: 37vw;
-  // font-size: 1.2rem;
-  // column-gap: 5rem;
   display: flex;
   flex-direction: row;
   gap: 3rem;

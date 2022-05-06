@@ -1,7 +1,8 @@
 .form__cta {
   display: flex;
   gap: 5rem;
-
+  align-self: stretch;
+  
   & > * {
     display: flex;
     align-items: center;

@@ -1,1 +1,82 @@
-footer.footer Footer
+-
+  const items = [
+      {
+          icon: 'fa-solid fa-location-dot',
+          text: 'Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn,P. Cổng Vị, Q. Ba Đình, Hà Nội' 
+      },
+      {
+          icon: 'fa-solid fa-phone',
+          text: '(04) 6674 2332' 
+      },
+      {
+          icon: 'fa-solid fa-phone',
+          text: '(04) 3786 8904' 
+      },
+      {
+          icon: 'fa-solid fa-phone',
+          text: '(08) 6680 9686' 
+      },
+      {
+          icon: 'fa-solid fa-envelope',
+          text: 'MSupport@bizweb.vn' 
+      }
+  ];
+
+-
+  const list = [
+      {
+          title: 'Chuyển hàng', 
+          texts: ['Mua sắm trực tuyến', 'Đên từ chúng tôi gửi đến', 'Chính sách vận chuyển', 'vận chuyển thông tin']
+      },
+      {
+          title: 'Hỗ trợ', 
+          texts: ['Câu chuyện của chúng ta', 'Thanh toán an toàn', 'Tuỳ chọn vận chuyển', 'Chính sách vận chuyển']
+      },
+      {
+          title: 'Thông tin', 
+          texts: ['về Chúng TÔI', 'Điều khoản & điều kiện', 'Chính Sách Riêng Tư', 'Đơn đặt hàng và returns']
+      },
+      {
+          title: 'My account', 
+          texts: ['Xem Giỏ hàng', 'Sản phẩm yêu thích', 'Kiểm tra', 'Theo dõi đặt hàng của tôi']
+      }
+  ];
+
+- const payments = ["visa", "paypal", "mastercard"];
+
+mixin contactItems
+  each item in items 
+    li.footer__item.footer__contact-item
+      i(class=`${item.icon} footer__icon`)
+      span.footer__text= item.text
+
+mixin contactUs
+  .footer__list.footer__contact
+    h2.footer__title Liên hệ với chúng tôi
+    .footer__content.footer__contact-content
+      ul.footer__items.footer__contact-items
+        +contactItems
+
+mixin list(items)
+  - let indexItems = 1;
+  each item in items
+    - let indexItem = 1;
+    .footer__list
+      h1.footer__title= item.title
+      .footer__content
+        ul(class=`footer__items footer__items-${indexItems++}`)
+          each text in item.texts
+            li(class=`footer__item footer__item-${indexItem++}`)= text
+
+footer.footer
+  .footer__wrapper
+    .footer__top
+      +contactUs
+      +list(list)
+    .footer__bottom
+      .footer__copyright @copyright2008-2014 DKT Technology JSC
+      .footer__payment
+        ul.footer__payment-items
+          each payment in payments
+            li.footer__payment-item
+              img(src=`/assets/images/footer/${payment}.png`, alt=payment)
