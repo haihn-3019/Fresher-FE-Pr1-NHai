@@ -18,10 +18,6 @@
     width: 100%;
   }
 
-  // display: grid;
-  // grid-template-rows: 1fr min-content;
-  // padding: 2rem
-
   &__content {
     grid-row: 1 / 2;
     position: relative;
@@ -59,11 +55,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    // justify-items: center;
-
-    // @media screen and (max-width: 100rem) {
-    //   grid-template-columns: repeat(3, max-content);
-    // }
 
     &-card {
       text-align: center;
@@ -90,12 +81,12 @@
 .quotes {
   &__left {
     @include flexbox;
-    
+
     &-box {
       margin-left: 5rem;
     }
   }
-  
+
   &__right {
     width: 90%;
   }
@@ -108,7 +99,7 @@
   &__avatar {
     height: 10rem;
     display: block;
-    border: 2px solid #cbd4b3;
+    border: 2px solid $color-green-light;
     border-radius: 50%;
     padding: 0.8rem;
   }
@@ -135,15 +126,175 @@
     margin-top: 2rem;
 
     &-2 {
-      background-color: rgb(115, 115, 115);
+      background-color: $color-gray-5;
     }
   }
 }
 
 .featured-products {
-  background-color: brown;
+  background-image: url("../assets/images/featured-production/10.png");
+
+  .title {
+    &__categories {
+      text-align: center;
+    }
+
+    &__category {
+      @include styleList($color: $color-gray-2, $font-size: 1.3rem);
+      padding: 1rem 1rem 1rem 1.5rem;
+
+      &-2 {
+        position: relative;
+        color: $color-green;
+        font-size: 2.5rem;
+        font-weight: 600;
+        border-bottom: 1px solid $color-gray-1;
+        padding-bottom: 2.5rem;
+      }
+  
+      &-2::after {
+        content: "//////////";
+        position: absolute;
+        color: $color-gray-1;
+        bottom: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $color-white;
+        padding: 2px;
+        font-size: 1rem;
+      }
+    }
+
+   
+
+    &__category:last-child {
+      border-left: 1px solid $color-gray-1;
+    }
+
+    &__category:first-child {
+      border-right: 1px solid $color-gray-1;
+    }
+
+    &__types {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    &__type {
+      @include styleList($color: $color-gray-3);
+      margin-left: 1rem;
+      padding-right: 1rem;
+      position: relative;
+    }
+
+    &__type::not(:last-child) {
+      padding-right: 0.5rem;
+    }
+
+    &__type:not(:last-child)::after {
+      content: ".";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__product {
+    cursor: pointer;
+    background-color: $color-white;
+  }
+
+  &__product:hover &__cta {
+    opacity: 1;
+    transition: 1s;
+  }
+
+  &__products {
+    position: relative;
+    margin-top: 5rem;
+    @include flexbox($wrap: wrap);
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  &__image {
+    width: 100%;
+    height: 21rem;
+    border-bottom: 1px dashed $color-gray-3;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__info {
+    text-align: center;
+    margin-top: 4rem;
+
+    & > hr {
+      width: 2rem;
+      margin: 1rem auto 2rem auto;
+    }
+  }
+
+  &__name {
+    color: $color-gray-3;
+  }
+
+  &__type {
+    color: $color-black;
+    font-weight: 600;
+  }
+
+  &__price {
+    color: $color-green;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__cta {
+    margin-top: 3rem;
+    opacity: 0;
+
+    & > * {
+      display: inline-block;
+      margin-left: 1rem;
+    }
+  }
+
+  &__buy {
+    border: 1px solid $color-black;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 1rem;
+  }
+
+  &__heart {
+    background-color: $color-green;
+    color: $color-white;
+    padding: 0.7rem;
+    border-radius: 1rem;
+  }
+
+  &__reset {
+    border-radius: 0.8rem;
+    border: 1px solid $color-gray-4;
+    padding: 5px;
+  }
+
+  &__btn-left,
+  &__btn-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__btn-left {
+    left: 50%;
+  }
 }
 
 .contact {
-  background-color: greenyellow;
+  background-color: $color-green-yellow;
 }
