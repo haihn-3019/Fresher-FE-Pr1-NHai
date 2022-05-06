@@ -1,2 +1,112 @@
+mixin socialMediaItems
+  -
+    const items = [
+      {
+        name: 'facebook',
+        icon: 'fa-brands fa-facebook-f'
+      },
+      {
+        name: 'twitter',
+        icon: 'fa-brands fa-twitter'
+      },
+      {
+        name: 'instagram',
+        icon: 'fa-brands fa-instagram'
+      },
+      {
+        name: 'google+',
+        icon: 'fa-brands fa-google-plus-g'
+      },
+      {
+        name: 'pinterest',
+        icon: 'fa-brands fa-pinterest'
+      },
+      {
+        name: 'linkedin',
+        icon: 'fa-brands fa-linkedin-in'
+      }
+    ];
+
+  .contact__social-media
+    ul.contact__social-media-items 
+      each item in items
+        li.contact__social-media-item
+          i(class=`${item.icon} contact__icon`)
+          span.contact__icon-name= item.name
+
+mixin tagItems
+  -
+    const items = [
+      "Đồng hồ", "Túi", "Phụ kiện", "Đồng hồ", "Túi", 
+      "Giày", "Sandal", "Áo sơ mi", "Nước hoa", "Giày", "Sandal",
+      "Trẻ em", "Thời trang nữ", "Trẻ em", "Thời trang nữ"
+    ];
+
+  .contact__tags-box
+    ul.contact__tags
+      each item in items 
+        li.contact__tag
+          a.contact__tag-link(href="#!")= item
+
+mixin form
+  form.contact__form(action="#")
+    input#input-email.contact__input(
+      type="email",
+      name="input-email",
+      placeholder="Email của bạn"
+    )
+    .contact__cta
+      p.contact__form-text Gửi email để nhận những ưu đãi mới nhất
+      button.contact__submit(type="submit") Gửi
+
+mixin descriptionAboutUs
+  - const para = "Hi, chào các nàng... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt. Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.";
+  - const title = "Giới thiệu chung về Mỹ phẩm Handmade mandala";
+
+  .contact__card.contact__about-us
+    h2.contact__title Về chúng tôi
+    .contact__description
+      .contact__logo
+        a.navbar-brand(href="#!")
+          span M
+          | andala
+      h5.contact__description-title= title
+      p.contact__para= para
+      a.contact__link Xem thêm
+
+mixin descriptionBlog
+  - const title = "REVIEW SON KEM BOURJOIS VELVET";
+  - const para = "Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.";
+
+  .contact__card.contact__blog
+    h2.contact__title Blog
+    .contact__description
+      img.contact__image(src="/assets/images/contact/18.png", alt="18+")
+      h5.contact__description-title.contact__title-description-blog= title
+      p.contact__para= para
+      p.contact__time
+        | B&#x1EDF;i NamTran (
+        time 27 / 05 / 2015
+        |)
+      .contact__comment 
+        a.contact__link(href="#") Đọc thêm
+        a.contact__link(href="#") 23 Bình luận
+
+mixin descriptionSendEmail
+  .contact__card.contact__send-email
+    .contact__card-top
+      h2.contact__title Gửi email cho chúng tôi
+      .contact__description
+        +form
+    .contact__card-bottom
+      h2.contact__title Tag sản phẩm
+      .contact__description
+        +tagItems
+
 mixin contact
-  .section-page.contact contact
+  section.section-page.contact
+    +socialMediaItems
+    .contact__content
+      +descriptionAboutUs
+      +descriptionBlog
+      +descriptionSendEmail

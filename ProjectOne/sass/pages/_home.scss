@@ -133,6 +133,9 @@
 
 .featured-products {
   background-image: url("../assets/images/featured-production/10.png");
+  padding: 5rem 0;
+  border-bottom: 1px solid $color-gray-2;
+  border-top: 1px solid $color-gray-2;
 
   .title {
     &__categories {
@@ -151,7 +154,7 @@
         border-bottom: 1px solid $color-gray-1;
         padding-bottom: 2.5rem;
       }
-  
+
       &-2::after {
         content: "//////////";
         position: absolute;
@@ -164,8 +167,6 @@
         font-size: 1rem;
       }
     }
-
-   
 
     &__category:last-child {
       border-left: 1px solid $color-gray-1;
@@ -296,5 +297,159 @@
 }
 
 .contact {
-  background-color: $color-green-yellow;
+  margin-top: 5rem;
+
+  &__social-media {
+    padding: 0 5rem;
+    &-items {
+      @include flexbox;
+      justify-content: space-evenly;
+    }
+
+    &-item {
+      list-style-type: none;
+      color: $color-gray-3;
+      font-size: 1.1rem;
+    }
+
+    &-item:hover {
+      color: $color-black;
+    }
+
+    &-item:hover .contact__icon {
+      border-color: $color-black;
+    }
+  }
+
+  &__icon {
+    @include shape($width: auto);
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 2px solid $color-gray-3;
+  }
+
+  &__icon-name {
+    margin-left: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    @include flexbox($justify-content: space-between);
+    margin-top: 4rem;
+  }
+
+  &__card {
+    width: 30%;
+
+    &-bottom {
+      margin-top: 2rem;
+    }
+  }
+
+  &__tags {
+    @include flexbox($wrap: wrap);
+    gap: 1.2rem;
+  }
+
+  &__tag {
+    list-style-type: none;
+    text-align: center;
+  }
+
+  &__tag-link {
+    @include link;
+    padding: 2px 5px;
+    border: 1px solid $color-gray-1;
+    background-color: $color-white;
+  }
+
+  &__tag-link:hover {
+    border: 1px solid $color-green;
+    background-color: $color-green;
+    color: $color-white;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-gray-3;
+    position: relative;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__title::after {
+    @include underline(
+      $font-size: 1.4rem,
+      $padding: 0.5rem,
+      $letter-spacing: 2px,
+      $font-style: italic,
+      $top: 100%
+    );
+  }
+
+  &__description {
+    margin-top: 4rem;
+
+    &-title {
+      margin-top: 4rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+  }
+
+  &__logo > a {
+    color: $color-black;
+  }
+
+  &__para {
+    margin-top: 2rem;
+  }
+
+  &__link {
+    margin-top: 2rem;
+    @include link($color: $color-gray-4, $font-size: 1.4rem);
+  }
+
+  &__title-description-blog {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-gray-3;
+  }
+
+  &__time {
+    @extend .contact__link;
+    cursor: initial;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-gray-3;
+  }
+
+  &__comment {
+    @include flexbox($justify-content: space-between);
+  }
+
+  &__input {
+    @include input($font-size: 1.4rem, $border: 1px solid $color-gray-3);
+    padding: 0.5rem 2rem;
+    outline: none;
+  }
+
+  &__cta {
+    text-align: center;
+  }
+
+  &__form-text {
+    margin-top: 2rem;
+  }
+
+  &__submit {
+    text-transform: uppercase;
+    font-weight: 700;
+    @include button($padding: 0.5rem 2rem);
+  }
+
+  &__image {
+    height: 17rem;
+    width: 100%;
+    display: block;
+  }
 }

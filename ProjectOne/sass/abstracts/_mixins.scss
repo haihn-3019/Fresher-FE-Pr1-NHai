@@ -48,10 +48,96 @@
   $wrap: nowrap,
   $basis: auto,
   $align-items: flex-start,
+  $justify-content: flex-start
 ) {
   display: flex;
   flex-direction: $direction;
   flex-wrap: $wrap;
   flex-basis: $basis;
   align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin underline(
+  $padding: initial,
+  $margin: initial,
+  $content: "//////////////",
+  $color: black,
+  $background-color: #fff,
+  $font-size: 1rem,
+  $width: auto,
+  $top: 50%,
+  $left: 50%,
+  $transform: translate(-50%, -50%),
+  $font-style: initial,
+  $letter-spacing: initial,
+  $height: $width
+) {
+  content: $content;
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: $transform;
+  background-color: $background-color;
+  width: $width;
+  height: $height;
+  margin: $margin;
+  padding: $padding;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  font-style: $font-style;
+}
+
+@mixin link(
+  $text-decoration: none,
+  $color: #000,
+  $font-size: 1.2rem,
+  $color-hover: #000
+) {
+  text-decoration: $text-decoration;
+  color: $color;
+  font-size: $font-size;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-hover;
+  }
+}
+
+@mixin input(
+  $border: initial,
+  $width: 100%,
+  $height: auto,
+  $color: #000,
+  $border-radius: none,
+  $font-size: 1rem
+) {
+  width: $width;
+  height: $height;
+  color: $color;
+  font-size: $font-size;
+  outline: none;
+  border: $border;
+  border-radius: $border-radius;
+}
+
+@mixin button(
+  $background-color: #000,
+  $border: none,
+  $width: auto,
+  $height: auto,
+  $padding: auto,
+  $color: #fff,
+  $border-radius: none,
+  $font-size: 1rem
+) {
+  background-color: $background-color;
+  width: $width;
+  height: $height;
+  color: $color;
+  font-size: $font-size;
+  outline: none;
+  border: $border;
+  padding: $padding;
+  border-radius: $border-radius;
 }
