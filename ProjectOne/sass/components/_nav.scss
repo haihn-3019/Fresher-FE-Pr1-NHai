@@ -1,11 +1,19 @@
 @use "../abstracts" as *;
+@use "../layout/grid" as *;
 
 .navbar {
+  @include grid-8-cols($grid-template-rows: none);
   z-index: 2;
-  grid-row: 1 / 2;
+  position: fixed;
+  width: 100vw;
 
-  &-nav {
-    gap: 4rem;
+  &-usernav {
+    @include center-section;
+    @include flexbox($align-items: center, $justify-content: flex-start);
+  }
+
+  &-nav{
+    gap: 3rem;
   }
 
   &-brand {

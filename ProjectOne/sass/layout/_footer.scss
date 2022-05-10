@@ -1,3 +1,104 @@
-.footer{
-    background-color: pink;
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../layout/grid" as *;
+
+.footer {
+  @include full-section;
+  @include grid-8-cols($grid-template-rows: none);
+  margin-top: 8rem;
+  background-color: $color-black;
+  font-size: 1.1rem;
+  color: $color-gray-5;
+  padding: 4rem 0;
+
+  .footer__wrapper {
+    @include center-section;
+  }
+
+  &__top {
+    @include flexbox($justify-content: space-between);
+    gap: 2rem;
+  }
+
+  &__list {
+    width: 12%;
+  }
+
+  &__item {
+    list-style-type: none;
+    line-height: 2.2rem;
+    font-size: inherit;
+  }
+
+  &__content {
+    margin-top: 2rem;
+  }
+
+  &__contact {
+    width: 25%;
+    margin-right: 6rem;
+
+    &-items {
+      @include flexbox($justify-content: space-between);
+      gap: 0.7rem 0;
+    }
+
+    &-item {
+      width: 50%;
+    }
+
+    &-item:first-child {
+      width: 100%;
+    }
+  }
+
+  &__items-1 > &__item-2 {
+    color: $color-green;
+    list-style-type: disc;
+    transform: translateX(2rem);
+  }
+
+  &__title {
+    color: $color-gray-2;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.5rem;
+  }
+
+  &__icon {
+    color: $color-green;
+  }
+
+  &__bottom {
+    @include flexbox($align-items: center);
+    margin-top: 2rem;
+  }
+
+  &__payment {
+    &-items {
+      @include flexbox($justify-content: space-between, $align-items: center);
+      gap: 1rem;
+    }
+
+    &-item {
+      list-style-type: none;
+    }
+
+    &-item > img {
+      width: 5rem;
+    }
+
+    &-item:not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+
+  &__item:last-child > &__text {
+    color: $color-green;
+  }
 }

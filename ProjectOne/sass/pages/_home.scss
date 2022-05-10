@@ -7,32 +7,32 @@
 
 .introduction {
   display: grid;
-  grid-template-rows: 80vh 15vh;
-
-  &-right {
-    width: 50%;
-  }
+  grid-template-rows: 88vh 12vh;
 
   &__img-right {
     display: block;
     width: 100%;
+    height: 100%;
   }
 
   &__content {
+    @include flexbox;
     grid-row: 1 / 2;
     position: relative;
   }
 
-  &__content-box {
-    position: absolute;
-    bottom: 10%;
-    left: 0;
+  &-left {
     text-align: center;
+    align-self: flex-end;
+    margin-bottom: 2rem;
   }
 
-  &__title {
-    font-size: $heading-primary;
-    color: $color-green;
+  &-right {
+    height: 100%;
+  }
+
+  &__content-box {
+    text-align: center;
   }
 
   &__price {
@@ -63,8 +63,10 @@
 }
 
 .commercial {
+  @include center-section;
+
   &-images {
-    @include flexbox($wrap: wrap);
+    @include flexbox;
   }
 
   &-image {
@@ -132,6 +134,7 @@
 }
 
 .featured-products {
+  @include full-section;
   background-image: url("../assets/images/featured-production/10.png");
   padding: 5rem 0;
   border-bottom: 1px solid $color-gray-2;
@@ -201,8 +204,13 @@
   }
 
   &__product {
-    cursor: pointer;
     background-color: $color-white;
+    position: relative;
+
+    & > a {
+      text-decoration: none;
+      display: block;
+    }
   }
 
   &__product:hover &__cta {
@@ -211,9 +219,9 @@
   }
 
   &__products {
+    @include flexbox;
     position: relative;
     margin-top: 5rem;
-    @include flexbox($wrap: wrap);
     gap: 2rem;
     justify-content: space-between;
   }
@@ -260,27 +268,22 @@
     & > * {
       display: inline-block;
       margin-left: 1rem;
+      background-color: $color-white;
+      border: 1px solid $color-gray-3;
+      color: $color-black;
+      padding: 0.8rem;
+      border-radius: 1rem;
+    }
+
+    & > *:hover {
+      background-color: $color-green;
+      color: $color-white;
     }
   }
 
   &__buy {
-    border: 1px solid $color-black;
     padding: 0.5rem 1rem;
     font-weight: 600;
-    border-radius: 1rem;
-  }
-
-  &__heart {
-    background-color: $color-green;
-    color: $color-white;
-    padding: 0.7rem;
-    border-radius: 1rem;
-  }
-
-  &__reset {
-    border-radius: 0.8rem;
-    border: 1px solid $color-gray-4;
-    padding: 5px;
   }
 
   &__btn-left,
@@ -297,13 +300,13 @@
 }
 
 .contact {
+  @include center-section;
   margin-top: 5rem;
 
   &__social-media {
     padding: 0 5rem;
     &-items {
-      @include flexbox;
-      justify-content: space-evenly;
+      @include flexbox($justify-content: space-evenly);
     }
 
     &-item {
@@ -335,7 +338,7 @@
   }
 
   &__content {
-    @include flexbox($justify-content: space-between);
+    @include flexbox;
     margin-top: 4rem;
   }
 
@@ -348,7 +351,7 @@
   }
 
   &__tags {
-    @include flexbox($wrap: wrap);
+    @include flexbox;
     gap: 1.2rem;
   }
 
@@ -384,7 +387,8 @@
       $padding: 0.5rem,
       $letter-spacing: 2px,
       $font-style: italic,
-      $top: 100%
+      $top: 100%,
+      $color: $color-gray-3
     );
   }
 
@@ -407,8 +411,8 @@
   }
 
   &__link {
-    margin-top: 2rem;
     @include link($color: $color-gray-4, $font-size: 1.4rem);
+    margin-top: 2rem;
   }
 
   &__title-description-blog {
@@ -424,7 +428,7 @@
   }
 
   &__comment {
-    @include flexbox($justify-content: space-between);
+    @include flexbox;
   }
 
   &__input {
@@ -442,9 +446,9 @@
   }
 
   &__submit {
+    @include button($padding: 0.5rem 2rem);
     text-transform: uppercase;
     font-weight: 700;
-    @include button($padding: 0.5rem 2rem);
   }
 
   &__image {
