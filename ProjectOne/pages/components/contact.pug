@@ -1,3 +1,6 @@
+include common/tags
+include common/blog
+
 mixin socialMediaItems
   -
     const items = [
@@ -43,10 +46,7 @@ mixin tagItems
     ];
 
   .contact__tags-box
-    ul.contact__tags
-      each item in items 
-        li.contact__tag
-          a.contact__tag-link(href="#!")= item
+    +tags(items)
 
 mixin form
   form.contact__form(action="#")
@@ -73,22 +73,19 @@ mixin descriptionAboutUs
       a.contact__link Xem thêm
 
 mixin descriptionBlog
-  - const title = "REVIEW SON KEM BOURJOIS VELVET";
-  - const para = "Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.";
+  -
+    const item = {
+      image: '/assets/images/blog/2.png',
+      title: 'Review son kem Bourjois Velvet',
+      para: 'Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog nàyvào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.',
+      author: 'NamTran',
+      time: '27 / 05 / 2015',
+      commentTotal: '23 bình luận'
+    };
 
   .contact__card.contact__blog
     h2.contact__title Blog
-    .contact__description
-      img.contact__image(src="/assets/images/contact/18.png", alt="18+")
-      h5.contact__description-title.contact__title-description-blog= title
-      p.contact__para= para
-      p.contact__time
-        | B&#x1EDF;i NamTran (
-        time 27 / 05 / 2015
-        | )
-      .contact__comment 
-        a.contact__link(href="#") Đọc thêm
-        a.contact__link(href="#") 23 Bình luận
+    +blog(item)
 
 mixin descriptionSendEmail
   .contact__card.contact__send-email

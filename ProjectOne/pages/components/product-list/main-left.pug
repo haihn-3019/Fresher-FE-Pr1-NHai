@@ -1,0 +1,66 @@
+include ../common/tags
+
+mixin tagsPart
+  - const items = ["Hoa tai", "Son", "Nước hoa", "Giày", "Sandal", "Áo sơ mi", "Nước hoa", "Thời trang nữ"];
+
+  .product-list__tags
+    .product-list__left-title
+      span Tag sản phẩm
+    .product-list__tags-inner
+      +tags(items, 'product-list__tags-list')
+
+mixin compare
+  .product-list__compare
+    .product-list__left-title
+      span So sánh sản phẩm
+    p.product-list__compare-result Bạn chưa có sản phẩm nào để so sánh
+
+mixin displayMenus
+  -
+    const menus = [
+      {
+          type: 'Mỹ phẩm',
+      },
+      {
+          type: 'Trang sức',
+          items: ['Vòng tay', 'Nhẫn', 'Lá chắn', 'Phụ kiện khác', 'Giày lười Giày Mọi']
+      },
+      {
+          type: 'Phụ kiện',
+      },
+      {
+          type: 'Nước hoa',
+      }
+    ];
+
+  .product-list__menus
+    .product-list__menus-wrapper
+      .product-list__left-title
+        i.fa-solid.fa-bars 
+        span Danh mục sản phẩm
+      each menu in menus
+        .product-list__menus-inner
+          .product-list__menus-title
+            span(class=`${menu.items ? 'span-active' : ''}`)= menu.type
+            i(class=`fa-solid fa-caret-${menu.items ? 'down' : 'right'}`)
+
+          if menu.items
+            .product-list__menus-menu
+              ul.product-list__menus-list
+                each item in menu.items
+                  li.product-list__menus-item
+                    a.product-list__menus-link(href="#")= item
+
+mixin image
+  .product-list__left-image
+    span.product-list__left-text
+      | mandala
+      br
+      | store
+
+mixin mainLeft
+  .product-list__left
+    +displayMenus
+    +compare
+    +tagsPart
+    +image

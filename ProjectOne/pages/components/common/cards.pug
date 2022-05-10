@@ -1,0 +1,19 @@
+include card
+include tags
+include images
+
+mixin mainCards(items, type)
+  case type
+    when 'tag'
+      +tags(items)
+    when 'image'
+      +images(items)
+    default
+      each item in items
+        +card(item, type)
+
+mixin cards(cards)
+  .cards
+    if cards.title
+      h3.cards__title= cards.title
+    +mainCards(cards.items, cards.type)

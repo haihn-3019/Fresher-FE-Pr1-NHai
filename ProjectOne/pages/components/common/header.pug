@@ -1,0 +1,8 @@
+include ../common/guide-path
+
+mixin header
+  - const paths = ["Home", "Blog"];
+
+  .blogs__header
+    +guidePath(paths)
+    h1.blogs__title blog

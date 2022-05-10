@@ -1,0 +1,15 @@
+
+mixin blog(item, classes='')
+  iv(class=`blog ${classes}`)
+    img.blog__image(src=item.image, alt="18+")
+    a.blog__title= item.title
+    p.blog__para= item.para
+    p.blog__time
+      | Bởi #{ item.author } (
+      time= item.time
+      | )
+    .blog__comment 
+      a.blog__link(href="#") 
+        span Đọc thêm
+        i.fa-solid.fa-angle-right.blog__icon 
+      a.blog__link(href="#")= item.commentTotal

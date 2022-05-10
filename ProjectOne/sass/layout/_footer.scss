@@ -5,8 +5,8 @@
 .footer {
   @include full-section;
   @include grid-8-cols($grid-template-rows: none);
-  margin-top: 8rem;
   background-color: $color-black;
+  margin-top: 5rem;
   font-size: 1.1rem;
   color: $color-gray-5;
   padding: 4rem 0;

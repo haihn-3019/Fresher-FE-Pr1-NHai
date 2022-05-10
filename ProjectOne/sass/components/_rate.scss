@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.rate {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+
+  &__icon:not(:first-child) {
+    margin-left: 0.2rem;
+  }
+
+  &__text {
+    color: $color-gray-2;
+    margin-left: 1rem;
+  }
+}

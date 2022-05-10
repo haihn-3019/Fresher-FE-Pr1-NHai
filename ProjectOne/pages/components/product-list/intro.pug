@@ -1,0 +1,17 @@
+include ../common/guide-path
+
+mixin banner
+  .product-list__banner
+    .product-list__banner-inner
+      .product-list__discount
+        .product-list__discount-left Giảm giá 50%
+        .product-list__discount-right 
+          span Trong vòng 3 ngày
+          span ( 25/5 - 28/5/2015 )
+      .product-list__image
+
+mixin introduction
+  - const items = ["Home", "Sản phẩm", "Tin tức"];
+  .product-list__intro 
+    +guidePath(items)
+    +banner

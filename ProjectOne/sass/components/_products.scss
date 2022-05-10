@@ -1,0 +1,136 @@
+@use "../abstracts" as *;
+
+.products {
+  &__grid {
+    @include flexbox;
+    position: relative;
+    margin-top: 5rem;
+    row-gap: 2rem;
+  }
+
+  &__list {
+    @include flexbox($direction: column, $justify-content: initial);
+    row-gap: 4rem;
+  }
+
+  &__list .product__cta {
+    text-align: left;
+  }
+
+  &__product-grid .product__cta {
+    opacity: 0;
+  }
+
+  &__product-grid:hover .product__cta {
+    opacity: 1;
+    transition: 1s;
+  }
+
+  &__image {
+    border-bottom: 1px dashed $color-gray-3;
+  }
+
+  &__name {
+    color: $color-gray-3;
+  }
+
+  &__type {
+    @include link($font-size: 1.5rem);
+    font-weight: 600;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__product-grid {
+    width: 30%;
+    text-align: center;
+  }
+
+  &__product-list {
+    @include flexbox($align-items: center);
+    width: 100%;
+  }
+
+  &__product-list > &__info {
+    width: 70%;
+  }
+
+  &__icon:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+
+  &__info {
+    text-align: center;
+    margin-top: 4rem;
+
+    & > hr {
+      width: 2rem;
+      margin: 1rem auto 2rem auto;
+    }
+  }
+
+  &__info-list {
+    margin: 0;
+    text-align: left;
+  }
+
+  &__info-list > &__rate {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__info-list > &__rate > span {
+    color: $color-gray-4;
+    margin-left: 1rem;
+  }
+
+  &__info-list &__price-new {
+    color: $color-black;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__para {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: $color-gray-5;
+    text-align: left;
+  }
+
+  &__product-grid > &__image {
+    height: 20rem;
+  }
+
+  &__product-list &__image {
+    width: 20%;
+  }
+
+  &__product {
+    background-color: $color-white;
+    position: relative;
+
+    & > a {
+      text-decoration: none;
+      display: block;
+    }
+  }
+
+  &__price {
+    & > * {
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    &-new {
+      color: $color-green;
+    }
+
+    &-old {
+      color: $color-gray-3;
+      font-size: 1.3rem;
+      margin-left: 0.5rem;
+    }
+  }
+}

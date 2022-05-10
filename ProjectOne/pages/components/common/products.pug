@@ -1,0 +1,42 @@
+include product-cta
+include rate
+
+mixin grid(item)
+  .products__info
+    .products__name= item.name
+    a.products__type(href="/product-detail.html")= item.title
+    hr
+    .products__price 
+      span.products__price-new= item.price
+      if item.priceOld
+        span.products__price-old= item.priceOld
+  +productCta
+
+mixin list(item)
+  -
+    const rateItems = {
+      iconTotal: 5,
+      icon: "fa-solid fa-heart",
+      text: '4 lượt mua'
+    };
+
+  .products__info.products__info-list
+    a.products__type(href="/product-detail.html")= item.titleList
+    +rate(rateItems)
+    p.products__para= item.para
+    .products__price
+      span.products__price-new= item.price
+      if item.priceOld
+        span.products__price-old= item.priceOld
+    +productCta
+
+mixin products(items, type='grid', classes= '')
+  div(class=`products__${type} ${classes}`)
+    each item in items
+      div(class=`products__product-${type}`)
+        img.products__image(srcset=item.image, 2x, alt=item.name)
+        if type == 'grid'
+          +grid(item)
+
+        else
+          +list(item)
