@@ -1,0 +1,61 @@
+include p-cta
+include guide-path
+
+mixin viewImages
+  - const images = ["1", "2", "3", "4"];
+
+  .p-detail__images
+    i.fa-solid.fa-arrow-up-long
+    ul
+      each image in images
+        li.p-detail__item
+          img.p-detail__image(
+            src=`/assets/images/product-detail/${image}.png`,
+            alt=image
+          )
+    i.fa-solid.fa-arrow-down-long
+
+mixin viewProduct
+  .p-detail__product
+    img(src="/assets/images/product-detail/5.png", alt="5")
+
+mixin viewContent
+  - const name = "Lắc tay TYFFANY XU HƯỚNG MỚI NHẤT";
+  - const code = "TYFFANY MS 3201";
+  - const newPrice = "955.000đ";
+  - const oldPrice = "999.000đ";
+  - const para = 'Không thế phủ nhận, thời trang và phong cách chính là "tuyên ngôn" không lời mạnh mẽ nhất của mỗi người phụ nữ. Do đó, việc mua sảm thời trang trở thành niềm vui, và có khi là nguồn cảm hứng vô tận đế phải đẹp sống vui, sống đẹp hơn trong mắt nửa còn lại của thế giới. Đế F5 tủ đồ của mình trước những xu hướng ngày một đa dạng hơn trong thế giới thời trang, nhiều chị em không ngần ngai chi tiêu "mạnh tay" để sở hữu những món đồ yêu thích.';
+
+  .p-detail__content
+    .p-detail__info
+      h1.p-detail__name= name
+      span.p-detail__code= code
+      .p-detail__price
+        strong.p-detail__price-new= newPrice
+        span.p-detail__price-old= oldPrice
+      p.p-detail__para= para
+    .p-detail__form
+      .p-detail__fieldset
+        label.p-detail__label(for="input-color") Màu sắc
+        input#input-color.p-detail__input(type="text", name="input-color")
+      .p-detail__fieldset
+        label.p-detail__label(for="input-size") Size
+        input#input-size.p-detail__input(type="text", name="input-size")
+      .p-detail__fieldset.p-detail__fieldset-amount
+        label.p-detail__label(for="input-amount") Số lượng
+        input#input-amount.p-detail__input(type="text", name="input-amount")
+      +productCta
+    .p-detail__share 
+      p.p-detail__share-label Shipping &amp; 
+        span Returns
+      img(src="/assets/images/product-detail/6.png", alt="6")
+
+mixin view
+  - const paths = ["Home", "Sản phẩm", "Trang sức", "Lắc tay"];
+
+  section.p-detail__view
+    +guidePath(paths)
+    .p-detail__main
+      +viewImages
+      +viewProduct
+      +viewContent

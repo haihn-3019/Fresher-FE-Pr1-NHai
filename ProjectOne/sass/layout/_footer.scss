@@ -16,7 +16,7 @@
   }
 
   &__top {
-    @include flexbox($justify-content: space-between);
+    @include flexbox;
     gap: 2rem;
   }
 
@@ -39,7 +39,7 @@
     margin-right: 6rem;
 
     &-items {
-      @include flexbox($justify-content: space-between);
+      @include flexbox;
       gap: 0.7rem 0;
     }
 
@@ -76,7 +76,7 @@
 
   &__payment {
     &-items {
-      @include flexbox($justify-content: space-between, $align-items: center);
+      @include flexbox($align-items: center);
       gap: 1rem;
     }
 

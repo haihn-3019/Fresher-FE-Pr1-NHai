@@ -1,3 +1,5 @@
+include p-cta
+
 mixin product
   -
     const products = [
@@ -46,17 +48,14 @@ mixin product
     ];
   each product in products
     .featured-products__product
-      a(href="product-detail.html")
+      a(href="/product-detail.html")
         img.featured-products__image(srcset=product.image, 2x, alt=product.name)
         .featured-products__info
           .featured-products__name= product.name
           .featured-products__type= product.title
           hr
           .featured-products__price= product.price
-        .featured-products__cta
-          .featured-products__buy Mua hàng
-          i.fa-solid.fa-heart.featured-products__heart
-          i.fa-solid.fa-rotate-left.featured-products__reset
+        +productCta
 
 mixin typeItems
   - const types = ["Mỹ phẩm", "Chăm sóc da", "Dành cho tóc", "Nước hoa", "Trang sức", "Quà tặng"];

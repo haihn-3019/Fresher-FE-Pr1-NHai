@@ -1,4 +1,9 @@
 extends templates/default
 
+include components/p-detail-des
+include components/p-detail-view
+
 block main
-    .product-detail  Product-detail
+    +view
+    +description
+    

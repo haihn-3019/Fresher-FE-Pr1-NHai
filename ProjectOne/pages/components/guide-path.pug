@@ -1,0 +1,6 @@
+mixin guidePath(items)
+  .guide-path(style="--bs-breadcrumb-divider: '>'", aria-label="breadcrumb")
+    ol.breadcrumb
+      each item in items
+        li.breadcrumb-item
+          a.breadcrumb-link(href="#")= item

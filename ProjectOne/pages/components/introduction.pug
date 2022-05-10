@@ -1,12 +1,12 @@
--
-  const features = {
-    "fa-solid fa-plane-up": "Miễn phí vận chuyển",
-    "fa-solid fa-gift": "Nhận ngay quà tặng trị giá 350.000đ",
-    "fa-solid fa-star": "Giảm 30% cho con hàng trên 5.000.000đ"
-  };
-
 mixin introduction
-  .section-page.introduction
+  -
+    const features = {
+      "fa-solid fa-plane-up": "Miễn phí vận chuyển",
+      "fa-solid fa-gift": "Nhận ngay quà tặng trị giá 350.000đ",
+      "fa-solid fa-star": "Giảm 30% cho con hàng trên 5.000.000đ"
+    };
+
+  section.introduction
     .introduction__content
       .introduction-left
         img.introduction__img-left(src="/assets/images/introduction/2.png")

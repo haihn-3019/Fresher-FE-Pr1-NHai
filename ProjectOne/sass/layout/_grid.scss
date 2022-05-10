@@ -1,4 +1,8 @@
-@mixin grid-8-cols($grid-template-rows: 100vh repeat(4, min-content)) {
+@use "../abstracts" as *;
+
+@mixin grid-8-cols(
+  $grid-template-rows: 6rem calc(100vh - 6rem) repeat(4, min-content)
+) {
   display: grid;
   grid-template-rows: $grid-template-rows;
   grid-template-columns:

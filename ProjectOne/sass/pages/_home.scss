@@ -1,13 +1,12 @@
 @use "../abstracts" as *;
 @use "../base" as *;
-
-.section-page {
-  @include full-section;
-}
+@use "../layout/grid" as *;
 
 .introduction {
+  @include center-section;
   display: grid;
   grid-template-rows: 88vh 12vh;
+  grid-row: 1/3;
 
   &__img-right {
     display: block;
@@ -25,10 +24,6 @@
     text-align: center;
     align-self: flex-end;
     margin-bottom: 2rem;
-  }
-
-  &-right {
-    height: 100%;
   }
 
   &__content-box {
@@ -213,17 +208,20 @@
     }
   }
 
-  &__product:hover &__cta {
+  &__product .product__cta {
+    opacity: 0;
+  }
+
+  &__product:hover .product__cta {
     opacity: 1;
     transition: 1s;
   }
 
   &__products {
-    @include flexbox;
+    @include flexbox($wrap: wrap, $justify-content: space-between);
     position: relative;
     margin-top: 5rem;
     gap: 2rem;
-    justify-content: space-between;
   }
 
   &__image {
@@ -255,37 +253,6 @@
     font-weight: 600;
   }
 
-  &__price {
-    color: $color-green;
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-
-  &__cta {
-    margin-top: 3rem;
-    opacity: 0;
-
-    & > * {
-      display: inline-block;
-      margin-left: 1rem;
-      background-color: $color-white;
-      border: 1px solid $color-gray-3;
-      color: $color-black;
-      padding: 0.8rem;
-      border-radius: 1rem;
-    }
-
-    & > *:hover {
-      background-color: $color-green;
-      color: $color-white;
-    }
-  }
-
-  &__buy {
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-  }
-
   &__btn-left,
   &__btn-right {
     position: absolute;
@@ -306,7 +273,8 @@
   &__social-media {
     padding: 0 5rem;
     &-items {
-      @include flexbox($justify-content: space-evenly);
+      @include flexbox;
+      justify-content: space-evenly;
     }
 
     &-item {
@@ -338,7 +306,7 @@
   }
 
   &__content {
-    @include flexbox;
+    @include flexbox($justify-content: space-between);
     margin-top: 4rem;
   }
 
@@ -351,7 +319,7 @@
   }
 
   &__tags {
-    @include flexbox;
+    @include flexbox($wrap: wrap);
     gap: 1.2rem;
   }
 
@@ -428,11 +396,12 @@
   }
 
   &__comment {
-    @include flexbox;
+    @include flexbox($justify-content: space-between);
   }
 
   &__input {
-    @include input($font-size: 1.4rem, $border: 1px solid $color-gray-3);
+    @include input($font-size: 1.4rem);
+    border: 1px solid $color-gray-3;
     padding: 0.5rem 2rem;
     outline: none;
   }

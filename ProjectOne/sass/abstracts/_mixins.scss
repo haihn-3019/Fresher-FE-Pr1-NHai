@@ -106,11 +106,10 @@
 }
 
 @mixin input(
-  $border: initial,
   $width: 100%,
   $height: auto,
   $color: #000,
-  $border-radius: none,
+  $border-radius: initial,
   $font-size: 1rem
 ) {
   width: $width;
@@ -118,7 +117,6 @@
   color: $color;
   font-size: $font-size;
   outline: none;
-  border: $border;
   border-radius: $border-radius;
 }
 
