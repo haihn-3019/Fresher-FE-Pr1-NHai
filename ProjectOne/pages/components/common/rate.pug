@@ -1,0 +1,5 @@
+mixin rate(rate, classes='')
+  div(class=`rate ${classes}`)
+    - for (let icon = 1 ; icon < rate.iconTotal ; icon++)
+      i(class=`${rate.icon} rate__icon`)
+    span.rate__text= rate.text

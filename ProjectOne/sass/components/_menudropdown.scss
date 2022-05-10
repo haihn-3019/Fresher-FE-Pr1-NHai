@@ -46,7 +46,6 @@
   @media screen and (max-width: 770px) {
     top: -1.2%;
   }
-  // transform: translate(-700%, -98%);
 }
 
 .menu {
@@ -56,15 +55,6 @@
     padding-bottom: 1rem;
   }
 
-  // &-1 {
-  //   grid-column: center-start / col-start 2;
-  // }
-  // &-2 {
-  //   grid-column: col-start 2 / col-start 3;
-  // }
-  // &-3 {
-  //   grid-column: col-start 3 / center-end;
-  // }
   &__item {
     list-style-type: none;
   }

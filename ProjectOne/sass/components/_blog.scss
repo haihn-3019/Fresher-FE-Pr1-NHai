@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+
+.blog {
+  width: 30%;
+
+  &__title {
+    @include link($font-size: 1.5rem);
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color-gray-3;
+  }
+
+  &__title:hover {
+    color: $color-gray-5;
+  }
+
+  &__para {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  &__link {
+    @include link($color: $color-gray-4, $font-size: 1.3rem);
+  }
+
+  &__icon {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  &__time {
+    @extend .blog__link;
+    cursor: initial;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-gray-3;
+  }
+
+  &__comment {
+    @include flexbox($justify-content: space-between);
+  }
+
+  &__image {
+    height: 20rem;
+    width: 100%;
+    display: block;
+    transform: translateY(3rem);
+    object-fit: cover;
+    object-position: 0 29%;
+    clip-path: polygon(
+      0% 0%,
+      100% -2%,
+      100% 76%,
+      53% 76%,
+      49% 83%,
+      44% 76%,
+      0% 76%
+    );
+  }
+}

@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+.tags {
+  &__list {
+    @include flexbox($wrap: wrap);
+    gap: 1.5rem;
+  }
+
+  &__list-box {
+    margin-top: 2rem;
+  }
+
+  &__item {
+    list-style-type: none;
+    text-align: center;
+  }
+
+  &__link {
+    @include link;
+    padding: 0.5rem;
+    border: 1px solid $color-gray-1;
+    background-color: $color-white;
+  }
+
+  &__link:hover {
+    border: 1px solid $color-green;
+    background-color: $color-green;
+    color: $color-white;
+  }
+}

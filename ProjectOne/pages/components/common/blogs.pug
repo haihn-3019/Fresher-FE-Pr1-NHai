@@ -1,0 +1,59 @@
+include blog
+include sort-pags
+
+mixin blogs
+  -
+    const items = [
+      {
+        image: '/assets/images/blog/1.png',
+        title: 'Review son kem Bourjois Velvet',
+        para: 'Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.',
+        author: 'NamTran',
+        time: '27 / 05 / 2015',
+        commentTotal: '23 bình luận'
+      },
+      {
+        image: '/assets/images/blog/2.png',
+        title: 'Review son kem Bourjois Velvet',
+        para: 'Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.',
+        author: 'NamTran',
+        time: '27 / 05 / 2015',
+        commentTotal: '23 bình luận'
+      },
+      {
+        image: '/assets/images/blog/3.png',
+        title: 'Review son kem Bourjois Velvet',
+        para: 'Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.',
+        author: 'NamTran',
+        time: '27 / 05 / 2015',
+        commentTotal: '23 bình luận'
+      },
+      {
+        image: '/assets/images/blog/4.png',
+        title: 'Review son kem Bourjois Velvet',
+        para: 'Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.',
+        author: 'NamTran',
+        time: '27 / 05 / 2015',
+        commentTotal: '23 bình luận'
+      },
+      {
+        image: '/assets/images/common/1.png',
+        title: 'Review son kem Bourjois Velvet',
+        para: 'Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.',
+        author: 'NamTran',
+        time: '27 / 05 / 2015',
+        commentTotal: '23 bình luận'
+      },
+      {
+        image: '/assets/images/blog/5.png',
+        title: 'Review son kem Bourjois Velvet',
+        para: 'Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tâm Free để giải nhiệt.',
+        author: 'NamTran',
+        time: '27 / 05 / 2015',
+        commentTotal: '23 bình luận'
+      }
+    ];
+
+  .blogs__list
+    each item in items
+      +blog(item)

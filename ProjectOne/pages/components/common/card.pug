@@ -1,0 +1,24 @@
+include rate
+
+mixin contentBlog(item)
+  .card__content.card__content-blog
+    time.card-blog__time= item.time
+    p.card-blog__para= item.para
+
+mixin contentProduct(item)
+  .card__content.card__content-product
+    h5.card__content-title.card__product-title= item.title
+    +rate(item.rate)
+    strong.card__product-price= item.price
+
+mixin contentCard(type, item)
+  case type 
+    when 'blog'
+      +contentBlog(item)
+    default
+      +contentProduct(item)
+
+mixin card(item, type= 'product')
+  div(class=`card card__${type}`) 
+    img.card__img(src=item.image, alt="18+")
+    +contentCard(type, item)

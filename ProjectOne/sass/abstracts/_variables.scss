@@ -22,3 +22,7 @@ $color-gray-2: #c4c4c4;
 $color-gray-3: #bababa;
 $color-gray-4: #ababab;
 $color-gray-5: #737373;
+
+// height
+$height-navbar: 6rem;
+$height-intro: calc(100vh - $height-navbar);

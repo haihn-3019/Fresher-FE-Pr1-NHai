@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.card {
+  @include flexbox($align-items: center);
+  border: none;
+  padding: 2rem 0;
+
+  &__img {
+    width: 30%;
+  }
+
+  &__content {
+    width: 65%;
+
+    &-title {
+      text-transform: uppercase;
+    }
+  }
+
+  &__product {
+    border-bottom: 1px dashed $color-gray-2;
+
+    &-price {
+      font-style: italic;
+      font-size: 1.4rem;
+    }
+  }
+}

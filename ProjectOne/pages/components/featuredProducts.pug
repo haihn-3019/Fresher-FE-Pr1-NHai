@@ -1,21 +1,19 @@
-include p-cta
+include common/products
 
-mixin product
+mixin productList
   -
-    const products = [
+    const items = [
       {
         image : '/assets/images/featured-production/12.png',
         name: 'TYFFANY',
         title: 'Mỹ phẩm châu Âu',
         price:  '355.000đ',
-        priceOld: 0
       },
       {
         image : '/assets/images/featured-production/13.png',
         name: 'OHUI',
         title: 'Mỹ phẩm châu Âu',
         price: '355.000đ',
-        priceOld: 0,
       },
       {
         image : '/assets/images/featured-production/14.png',
@@ -29,55 +27,44 @@ mixin product
         name: 'SARVON',
         title: 'Mỹ phẩm châu Âu',
         price: ' 355.000 đ',
-        priceOld: 0,
       },
       {
         image : '/assets/images/featured-production/16.png',
         name: 'TYFFAN',
         title: 'Mỹ phẩm châu Âu',
         price: '355.000đ',
-        priceOld: 0,
       },
       {
         image : '/assets/images/featured-production/17.png',
         name: 'OHUI',
         title: 'Mỹ phẩm châu Âu',
         price: '355.000đ',
-        priceOld: 0,
       }
     ];
-  each product in products
-    .featured-products__product
-      a(href="/product-detail.html")
-        img.featured-products__image(srcset=product.image, 2x, alt=product.name)
-        .featured-products__info
-          .featured-products__name= product.name
-          .featured-products__type= product.title
-          hr
-          .featured-products__price= product.price
-        +productCta
+  +products(items, 'featured-products__products')
 
 mixin typeItems
   - const types = ["Mỹ phẩm", "Chăm sóc da", "Dành cho tóc", "Nước hoa", "Trang sức", "Quà tặng"];
-  each type in types
-    li.title__type= type
+
+  ul
+    each type in types
+      li.featured-products__type= type
 
 mixin categoryItems
   - const categories = ["Sản phẩm mới", "Sản phẩm bán chạy", "Sản phẩm đặc biệt"];
-  each category, index in categories
-    - let i = index + 1;
-    li(class=`title__category title__category-${i}`)= category
+
+  ul
+    each category, index in categories
+      - let i = index + 1;
+      li(class=`featured-products__category featured-products__category-${i}`)= category
 
 mixin featuredProducts
   section.featured-products
     .featured-products__title
-      .title__categories
-        ul
-          +categoryItems
-      .title__types
-        ul
-          +typeItems
-    .featured-products__products
-      +product
+      .featured-products__categories
+        +categoryItems
+      .featured-products__types
+        +typeItems
+    +productList
     .button-left
     .button-right

@@ -1,0 +1,47 @@
+mixin sortTabs
+  -
+    const tabs = [
+      {
+        icon :"fa-solid fa-grip",
+        value : 'grid'
+      }, 
+      {
+        icon: "fa-solid fa-list-ul",
+        value: 'list'
+      }
+    ];
+
+  .sort-pags__sort
+    ul#pills-tab.nav.nav-pills(role="tablist")
+      each tab, index in tabs
+        li.nav-item(role="presentation")
+          button(
+            id=`pills-${tab.value}-tab`,
+            class=`nav-link sort-pags__tab-link ${index == 0 ? 'active' : ''}`,
+            data-bs-toggle="pill",
+            data-bs-target=`#pills-${tab.value}`,
+            type="button",
+            role="tab",
+            aria-controls=`pills-${tab.value}`,
+            aria-selected=`${index == 0}`
+          )
+            i(class=tab.icon)
+
+mixin pags(pages = [1,2,3])
+  .sort-pags__pags
+    nav(aria-label="Page")
+    ul.pagination
+      li.page-item.sort-pags__page-item
+        a.page-link.sort-pags__page-link(href="#", aria-label="Previous")
+          i.fa-solid.fa-caret-left(aria-hidden="true")
+      each page in pages
+        li.page-item.sort-pags__page-item
+          a.page-link.sort-pags__page-link(href="#")= page
+      li.page-item.sort-pags__page-item
+        a.page-link.sort-pags__page-link(href="#", aria-label="Next")
+          i.fa-solid.fa-caret-right(aria-hidden="true")
+
+mixin sortPags(pages)
+  .sort-pags
+    +sortTabs
+    +pags(pages)
