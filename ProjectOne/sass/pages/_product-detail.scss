@@ -1,0 +1,125 @@
+@use "../abstracts" as *;
+@use "../layout/grid" as *;
+
+.my-container {
+  @include grid-8-cols(
+    $grid-template-rows: $height-navbar repeat(4, min-content)
+  );
+}
+
+.p-detail {
+  &__view {
+    @include center-section;
+    grid-row: 2 / 3;
+  }
+
+  &__description {
+    @include center-section;
+    grid-row: 3 / 4;
+  }
+
+  &__main {
+    @include flexbox($align-items: center);
+    margin-top: 2rem;
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 400;
+    color: $color-gray-5;
+    font-size: 2rem;
+  }
+
+  &__code {
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: $color-gray-5;
+  }
+
+  &__para {
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+
+  &__label {
+    text-transform: uppercase;
+  }
+
+  &__input {
+    @include input($font-size: 1.5rem);
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    border: 1px solid $color-gray-1;
+  }
+
+  &__images,
+  &__images > ul {
+    @include flexbox($direction: column, $align-items: center);
+  }
+
+  &__images {
+    width: 10%;
+  }
+
+  &__product {
+    width: 50%;
+  }
+
+  &__content {
+    width: 40%;
+  }
+
+  &__price {
+    margin-top: 1rem;
+
+    & > * {
+      font-style: italic;
+    }
+
+    &-new {
+      font-size: 2.75rem;
+    }
+
+    &-old {
+      color: $color-gray-2;
+      margin-left: 1rem;
+    }
+  }
+
+  &__share {
+    @include flexbox;
+    margin-top: 2rem;
+
+    &-label {
+      font-size: 1.2rem;
+    }
+
+    &-label > span {
+      color: $color-red;
+    }
+  }
+
+  &__fieldset {
+    margin-top: 1.5rem;
+
+    & > * {
+      display: block;
+    }
+  }
+
+  &__fieldset-amount {
+    & > * {
+      display: inline-block;
+    }
+
+    & > input {
+      width: 15%;
+      margin: 0 0 0 0.5rem;
+    }
+  }
+}

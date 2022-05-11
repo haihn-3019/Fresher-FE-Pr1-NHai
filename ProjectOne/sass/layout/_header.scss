@@ -1,5 +1,11 @@
 @use "../abstracts" as *;
 
 .header {
-  @include center-section;
+  @include full-section;
+
+  grid-row: 1 / 2;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  border-bottom: 1px solid $color-gray-1;
 }

@@ -20,9 +20,9 @@ include productItem
 mixin otherItems(item= "Trang chủ")
   li.nav-item
     if item == "Trang chủ"
-      a.nav-link.active(aria-current="page", href="#") Trang Chủ
+      a.nav-link.active(aria-current="page", href="/") Trang Chủ
     else
-      a.nav-link(href="#")= item
+      a.nav-link(href="")= item
 
 mixin navWeb
   each item in navItems

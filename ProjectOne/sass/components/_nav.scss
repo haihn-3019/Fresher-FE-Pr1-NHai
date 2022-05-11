@@ -3,16 +3,13 @@
 
 .navbar {
   @include grid-8-cols($grid-template-rows: none);
-  z-index: 2;
-  position: fixed;
-  width: 100vw;
 
   &-usernav {
     @include center-section;
-    @include flexbox($align-items: center, $justify-content: flex-start);
+    @include flexbox($wrap: nowrap, $align-items: center);
   }
 
-  &-nav{
+  &-nav {
     gap: 3rem;
   }
 
@@ -20,6 +17,7 @@
     font-weight: 600;
     font-size: 2rem;
     font-style: italic;
+    transform: translateX(-1rem);
 
     & > span {
       @include shape($width: auto);
