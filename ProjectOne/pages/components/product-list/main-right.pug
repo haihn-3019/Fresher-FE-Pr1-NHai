@@ -1,0 +1,76 @@
+include ../common/sort-pags
+include ../common/products
+
+mixin content
+  -
+    const items = [
+      {
+        image : '/assets/images/product-list/4.png',
+        name: 'TYFFANY',
+        title: 'Mỹ phẩm châu Âu',
+        titleList: 'Mỹ phẩm châu Âu thương hiệu hàng đầu thế giới',
+        para: ' Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưưu tập mang tính biểu tượng này cung cấp cho một cải gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà.',
+        price:  '355.000đ',
+      },
+      {
+        image : '/assets/images/product-list/5.png',
+        name: 'OHUI',
+        title: 'Mỹ phẩm châu Âu',
+        titleList: 'Mỹ phẩm châu Âu thương hiệu hàng đầu thế giới',
+        para: ' Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưưu tập mang tính biểu tượng này cung cấp cho một cải gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà.',
+        price: '355.000đ',
+      },
+      {
+        image : '/assets/images/product-list/6.png',
+        name: 'HOME',
+        title: 'Mỹ phẩm châu Âu',
+        titleList: 'Mỹ phẩm châu Âu thương hiệu hàng đầu thế giới',
+        para: ' Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưưu tập mang tính biểu tượng này cung cấp cho một cải gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà.',
+        price: '355.000đ',
+        priceOld:  '450.000đ'
+      },
+      {
+        image : '/assets/images/product-list/4.png',
+        name: 'TYFFANY',
+        title: 'Mỹ phẩm châu Âu',
+        titleList: 'Mỹ phẩm châu Âu thương hiệu hàng đầu thế giới',
+        para: ' Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưưu tập mang tính biểu tượng này cung cấp cho một cải gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà.',
+        price:  '355.000đ',
+      },
+      {
+        image : '/assets/images/product-list/5.png',
+        name: 'OHUI',
+        title: 'Mỹ phẩm châu Âu',
+        titleList: 'Mỹ phẩm châu Âu thương hiệu hàng đầu thế giới',
+        para: ' Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưưu tập mang tính biểu tượng này cung cấp cho một cải gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà.',
+        price: '355.000đ',
+      },
+      {
+        image : '/assets/images/product-list/6.png',
+        name: 'HOME',
+        title: 'Mỹ phẩm châu Âu',
+        titleList: 'Mỹ phẩm châu Âu thương hiệu hàng đầu thế giới',
+        para: ' Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưưu tập mang tính biểu tượng này cung cấp cho một cải gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà.',
+        price: '355.000đ',
+        priceOld:  '450.000đ'
+      }
+    ];
+
+  - const tabs = ["grid", "list"];
+
+  #pills-tabContent.tab-content
+    each tab, index in tabs
+      div(
+        id=`pills-${tab}`,
+        class=`tab-pane fade ${index == 0 ? 'show active' : ''}`,
+        role="tabpanel",
+        aria-labelledby=`pills-${tab}-tab`
+      )
+        +products(items, tab,`product-list__content product-list__content-${tab}`)
+
+
+mixin mainRight
+  .product-list__right
+    +sortPags([1,2,3])
+    +content
+    +sortPags([1,2,3])

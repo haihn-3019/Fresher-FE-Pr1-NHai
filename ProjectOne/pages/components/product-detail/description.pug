@@ -1,0 +1,152 @@
+include ../common/cards
+
+mixin tabItems
+  -
+    const tabs = [
+      {id: 'main-features', text: "Đặc điểm nổi bật"},
+      {id: 'information', text: "Thông tin sản phẩm"},
+      {id: 'review', text: "Đánh giá"}
+    ];
+  .product-detail__tabs
+    ul#pills-tab.nav.nav-pills(role="tablist")
+      each tab, index in tabs 
+        - const isFirstIndex = index == 0 ? true : false;
+
+        li.nav-item.product-detail__tab(role="presentation")
+          button(
+            id=`pills-${tab.id}-tab`,
+            class=`nav-link ${isFirstIndex ? 'active': ''}`,
+            data-bs-toggle="pill",
+            data-bs-target=`${tab.id}`,
+            type="button",
+            role="tab",
+            aria-controls=`pills-${tab.id}`,
+            aria-selected=isFirstIndex
+          )= tab.text
+
+mixin tabContentItems
+  -
+    const tabContents = [
+        { 
+          id: 'main-features',
+          title: 'the mark of a legend',
+          image: '/assets/images/product-detail/7.png',
+          para: "Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưu tập mang tính biểu tượng này cung cấp cho một cái gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà."
+        }, 
+        { 
+          id: 'information',
+          title: 'the mark of a legend',
+          image: '/assets/images/product-detail/8.png',
+          para: "Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưu tập mang tính biểu tượng này cung cấp cho một cái gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà."
+        }, 
+        { 
+          id: 'rating',
+          title: 'the mark of a legend',
+          image: '/assets/images/product-detail/9.png',
+          para: "Tự hào được ghi là năm mà Tiffany&Co là thành lập, bộ sưu tập mang tính biểu tượng này cung cấp cho một cái gật đầu với qua trong khi thế hiện một cảm giác hiện đại với kiểu dáng đẹp đường cong và đường nét mượt mà."
+        }
+      ];
+
+  #pills-tabContent.tab-content.product-detail__tab-content
+    each tabContent, index in tabContents
+      - const i = index + 1;
+
+      div(
+        id=`pills-${tabContent.id}`,
+        class=`tab-pane product-detail__tab-pane product-detail__tab-pane-${i} fade show active`,
+        role="tabpanel",
+        aria-labelledby=`pills-${tabContent.id}-tab`
+      )
+        .tab-content__info
+          h5.tab-content__title= tabContent.title
+          p.tab-content__para= tabContent.para
+        .tab-content__image
+          img(src=tabContent.image, alt=tabContent.id)
+
+mixin hotProducts
+  -
+    const items = [
+      {
+        type: 'product',
+        title: "Sản phảm bán chạy",
+        items: [
+          {
+            title: "Mỹ phẩm châu âu",
+            rate: {
+              iconTotal: 5,
+              icon: "fa-solid fa-heart",
+              text: '4 lượt mua'
+            },
+            price: "355.000đ",
+            image: "/assets/images/product-detail/11.png",
+          },
+          {
+            title: "Mỹ phẩm châu âu",
+            rate: {
+              iconTotal: 5,
+              icon: "fa-solid fa-heart",
+              text: '4 lượt mua'
+            },
+            price: "355.000đ",
+            image: "/assets/images/product-detail/11.png",
+          },
+          {
+            title: "Mỹ phẩm châu âu",
+            rate: {
+              iconTotal: 5,
+              icon: "fa-solid fa-heart",
+              text: '4 lượt mua'
+            },
+            price: "355.000đ",
+            image: "/assets/images/product-detail/11.png",
+          },
+        ],
+      },
+      {
+        type: 'product',
+        title: "Sản phẩm mua nhiều",
+        items: [
+          {
+            title: "Mỹ phẩm châu âu",
+            rate: {
+              iconTotal: 5,
+              icon: "fa-solid fa-heart",
+              text: '4 lượt mua'
+            },
+            price: "355.000đ",
+            image: "/assets/images/product-detail/11.png",
+          },
+          {
+            title: "Mỹ phẩm châu âu",
+            rate: {
+              iconTotal: 5,
+              icon: "fa-solid fa-heart",
+              text: '4 lượt mua'
+            },
+            price: "355.000đ",
+            image: "/assets/images/product-detail/11.png",
+          },
+          {
+            title: "Mỹ phẩm châu âu",
+            rate: {
+              iconTotal: 5,
+              icon: "fa-solid fa-heart",
+              text: '4 lượt mua'
+            },
+            price: "355.000đ",
+            image: "/assets/images/product-detail/11.png",
+          },
+        ],
+      },
+    ];
+
+  .product-detail__hot
+    each item in items
+      +cards(item)
+
+mixin description
+  section.product-detail__description 
+    .product-detail__features
+      +tabItems
+      +tabContentItems
+    +hotProducts
