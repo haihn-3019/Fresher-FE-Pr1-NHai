@@ -1,0 +1,59 @@
+include ../common/form
+include ../common/blog
+
+mixin content
+  -
+    const form = {
+      legend: "Đóng góp ý kiến",
+      classes: 'blog-detail__form',
+      controls: [
+        {
+          text: "Tên*",
+          classes: "label__name",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "input__name",
+          },
+        },
+        {
+          text: "Email*",
+          classes: "label__email",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "input__email",
+          },
+        },
+        {
+          text: "Ý kiến",
+          classes: "label__feedback",
+          input: {
+            tag: "textarea",
+            classes: "input__feedback",
+            cols: 30,
+            rows: 10
+          },
+        },
+        {
+          tag: "button",
+          type: "submit",
+          text: "Gửi ý kiến",
+          classes: 'btn-black blog-detail__submit'
+        },
+      ],
+    };
+
+  -
+    const blog = {
+      image: '/assets/images/blog/4.png',
+      title: 'Nàng béo không ngại diện váy áo nổi bật',
+      author: 'NamTran',
+      time: '27/05/2015',
+      commentTotal: '23 bình luận',
+      para: 'Hi, chào các nàng .. sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.Trong tiết xuân hè, nàng ngoại cỡ thắp sáng phong cách bằng quần họa tiết nhiệt đới đi kèm áo sơ mi nhã nhặn.Trang phục họa tiết điện tử được nàng phối cùng chân váy kẻ caro, làm nên style vừa hiện đại, vừa phảng phất nét cổ điển.Lối diện đồ hàng ngày đơn giản, khỏe khoản của cô khi kết hợp chất liệu jean.Nữ blogger rực rỡ khi hòa trộn các gam đỏ, hồng, tím. một cách vui tươi, kèm theo các phụ kiện điệu đà.'
+    }; 
+
+  .blog-detail__content
+    +blog(blog, 'blog-detail__blog')
+    +formBasic(form)

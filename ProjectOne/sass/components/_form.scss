@@ -1,0 +1,55 @@
+@use "../abstracts" as *;
+
+.form {
+  &__legend {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  &__control:not(:first-child) {
+    margin-top: 3rem;
+  }
+
+  &__label {
+    @include flexbox;
+  }
+
+  &__label > span {
+    width: 10%;
+  }
+
+  &__input {
+    @include input($font-size: 1.5rem, $width: 90%, $padding: 0.5rem 1rem);
+  }
+
+  &__textarea {
+    @extend .form__input;
+  }
+
+  &__cta {
+    text-align: center;
+  }
+}
+
+.form-contact {
+  &__cta {
+    display: block;
+  }
+
+  &__cta > * {
+    display: inline-block;
+  }
+
+  &__cta-title {
+    margin-top: 1.5rem;
+    display: block;
+  }
+
+  &__input {
+    @include input($font-size: 1.4rem);
+    border: 1px solid $color-gray-3;
+    padding: 0.5rem 2rem;
+    outline: none;
+  }
+}

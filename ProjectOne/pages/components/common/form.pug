@@ -1,0 +1,41 @@
+include button
+
+mixin inputCustom(input)
+  case input.tag
+    when 'textarea'
+      textarea(
+        class=`form__textarea ${input.classes}`,
+        cols=input.cols,
+        rows=input.rows
+      ) 
+    default
+      input(type=input.type, class=`form__input ${input.classes}`)
+
+mixin controls(control)
+  case control.tag
+    when 'button'
+      .form__cta
+        +buttonBasic(control.text, control.classes, control.type)
+    default
+      .form__control 
+        label(class=`form__label ${control.classes}`) 
+          span= control.text
+          +inputCustom(control.input)
+
+mixin formBasic(form)
+  form(action="#", class=`form form-basic ${form.classes}`)
+    fieldset.form__fieldset 
+      legend.form__legend= form.legend
+      each control in form.controls
+        +controls(control)
+
+mixin formContact(form)
+  form.form-contact(action="#")
+    input.form__input.form-contact__input(
+      type=form.input.type,
+      name=form.input.name,
+      placeholder=form.input.placeholder
+    )
+    .form__cta.form-contact__cta 
+      h5.form__cta-title.form-contact__cta-title= form.ctaTitle
+      +buttonBasic(form.button.text, form.button.classes)

@@ -1,5 +1,33 @@
 include productItem
 
+//- -
+  const navItems = [
+    {
+      path: '/',
+      text: Trang chủ
+    },
+    {
+      path: '/introduction',
+      text: Giới thiệu
+    },
+    {
+      path: '/product-list',
+      text: Sản phẩm
+    },
+    {
+      path: '/news',
+      text: Tin tức
+    },
+    {
+      path: '/maps',
+      text: Bản đồ
+    },
+    {
+      path: '/contact',
+      text: Liên hệ
+    }
+  ];
+
 - const navItems = ["Trang chủ", "Giới thiệu", "Sản phẩm", "Tin tức", "Bản đồ", "Liên hệ"];
 - const skincareProducts = ["Áo khoác", "Bộ áo liền quần", "Dresses", "Quần Váy", "Quần short", "Quần jean", "Đồ đan", "Áo nỉ"];
 -
@@ -30,4 +58,5 @@ mixin navWeb
       +itemDropdown(item, productsItem)
     else
       +otherItems(item)
-      
+
+//- mixin productsItemDropdown

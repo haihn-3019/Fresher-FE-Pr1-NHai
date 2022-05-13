@@ -33,6 +33,7 @@
   &__time {
     @extend .blog__link;
     cursor: initial;
+    font-style: italic;
     padding-bottom: 1rem;
     border-bottom: 1px solid $color-gray-3;
   }
