@@ -1,0 +1,15 @@
+extends templates/default
+
+include components/common/header
+include components/about-us/main
+
+block main
+  -
+    const header = {
+        title: 'Về chúng tôi',
+        classes: 'about-us__header',
+        paths: ["Home", "Về chúng tôi"]
+    };
+
+  +header(header)
+  +main
