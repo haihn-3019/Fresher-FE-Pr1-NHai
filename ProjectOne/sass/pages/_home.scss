@@ -138,6 +138,10 @@
   border-bottom: 1px solid $color-gray-2;
   border-top: 1px solid $color-gray-2;
 
+  &__products > .products__product-grid {
+    width: 15%;
+  }
+
   &__categories {
     text-align: center;
   }
@@ -296,31 +300,5 @@
   &__link {
     @include link($color: $color-gray-4, $font-size: 1.4rem);
     margin-top: 2rem;
-  }
-
-  &__input {
-    @include input($font-size: 1.4rem);
-    border: 1px solid $color-gray-3;
-    padding: 0.5rem 2rem;
-    outline: none;
-  }
-
-  &__cta {
-    text-align: center;
-  }
-
-  &__form-text {
-    margin-top: 2rem;
-  }
-
-  &__submit {
-    @include button($padding: 0.5rem 2rem);
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-
-  &__submit:hover {
-    color: $color-black;
-    background-color: $color-black-2;
   }
 }

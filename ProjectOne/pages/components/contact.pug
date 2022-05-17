@@ -1,5 +1,6 @@
 include common/tags
 include common/blog
+include common/form
 
 mixin socialMediaItems
   -
@@ -48,17 +49,6 @@ mixin tagItems
   .contact__tags-box
     +tags(items)
 
-mixin form
-  form.contact__form(action="#")
-    input#input-email.contact__input(
-      type="email",
-      name="input-email",
-      placeholder="Email của bạn"
-    )
-    .contact__cta
-      p.contact__form-text Gửi email để nhận những ưu đãi mới nhất
-      button.contact__submit(type="submit") Gửi
-
 mixin descriptionAboutUs
   - const para = "Hi, chào các nàng... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt. Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.";
   - const title = "Giới thiệu chung về Mỹ phẩm Handmade mandala";
@@ -88,11 +78,25 @@ mixin descriptionBlog
     +blog(item)
 
 mixin descriptionSendEmail
+  -
+    const form = {
+      ctaTitle: 'Gửi email để nhận những ưu đãi mới nhất',
+      input:{
+        type: 'text',
+        name: 'input-contact',
+        placeholder: 'Email của bạn'
+      },
+      button:{
+        text: 'Gửi',
+        classes: 'btn-black form-contact__cta-send',
+      }
+    };
+
   .contact__card.contact__send-email
     .contact__card-top
       h2.contact__title Gửi email cho chúng tôi
       .contact__description
-        +form
+        +formContact(form)
     .contact__card-bottom
       h2.contact__title Tag sản phẩm
       .contact__description
