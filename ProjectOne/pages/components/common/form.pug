@@ -39,3 +39,14 @@ mixin formContact(form)
     .form__cta.form-contact__cta 
       h5.form__cta-title.form-contact__cta-title= form.ctaTitle
       +buttonBasic(form.button.text, form.button.classes)
+
+mixin formCta
+  form.form__cta
+    i.fa-solid.fa-cart-shopping
+    i.fa-solid.fa-magnifying-glass
+
+mixin formSearch
+  form.form-search(action="#") 
+    input.form-search__input(type="text")
+    button.form-search__button(type="submit") 
+      i.fa-solid.fa-magnifying-glass.form-search__icon
