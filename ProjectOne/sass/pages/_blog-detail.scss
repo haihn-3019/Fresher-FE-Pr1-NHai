@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+.blog-detail {
+  &__main {
+    @include flexbox;
+    @include center-section;
+    grid-row: 3 / 4;
+    margin-top: 4rem;
+  }
+
+  &__aside {
+    width: 25%;
+  }
+
+  &__aside .tags__list {
+    justify-content: initial;
+  }
+
+  &__content {
+    width: 70%;
+  }
+
+  &__submit {
+    padding: 1rem 1.5rem;
+  }
+
+  &__form .form__cta {
+    margin: 2rem 0 0 10%;
+  }
+
+  &__blog {
+    width: 100%;
+
+    & > .blog__image {
+      height: 40rem;
+      object-position: 0 90%;
+    }
+
+    & > .blog__title {
+      font-size: 2.5rem;
+    }
+  }
+}

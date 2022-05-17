@@ -1,0 +1,51 @@
+include ../common/cards
+
+mixin aside
+  -
+    const cardsList = [
+      {
+        type: 'blog',
+        title: 'Bài viết mới nhất',
+        items: [
+            {
+                time: '11 / Tháng 5',
+                para: 'Đăng bởi bởi GiangLe',
+                image: '/assets/images/blog/2.png'
+            },
+            {
+                time: '11 / Tháng 5',
+                para: 'Đăng bởi bởi GiangLe',
+                image: '/assets/images/blog/3.png'
+            },
+            {
+                time: '11 / Tháng 5',
+                para: 'Đăng bởi bởi GiangLe',
+                image: '/assets/images/blog/4.png'
+            }
+        ] 
+      },
+      {
+        type: 'tag',
+        title: 'Blog tags',
+        items: [
+            "Đồng hồ",
+            "Túi",
+            "Phụ kiện",
+            "Giày",
+            "Sandal",
+            "Áo sơm mi",
+            "Nước hoa",
+            "Trẻ em",
+            "Thời trang nữ"
+        ]
+      },
+      {
+        type: 'image',
+        title: 'Lasted video',
+        items: ['/assets/images/blog-detail/1.png']
+      }
+    ];
+
+  .blog-detail__aside
+    each cards in cardsList    
+      +cards(cards)

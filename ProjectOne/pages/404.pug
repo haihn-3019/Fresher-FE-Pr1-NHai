@@ -1,0 +1,34 @@
+extends templates/simple
+
+include components/common/form
+
+mixin menu
+  -
+    const links = [
+        {
+            text: "Liên hệ", 
+            href: 'contact.html'
+        },
+        {
+            text: "Trang chủ", 
+            href: '/'
+        }
+    ];
+
+  .not-found__content-menu
+    ul
+      each link, index in links
+        li.not-found__content-item
+          a.not-found__content-link(href=link.href)= link.text
+          if index < links.length-1
+            span.not-found__content-vertical |
+
+block main
+  main.not-found__main
+    section.not-found__section
+      .not-found__image-box
+        img.not-found__image-404(src="/assets/images/404/404.png", alt="404")
+      .not-found__content
+        h1.not-found__title Đây không phải là trang web bạn đang tìm kiếm
+        +formSearch
+        +menu

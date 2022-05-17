@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+
+.not-found {
+  &__main {
+    @include flexbox($align-items: center, $justify-content: center);
+    background-image: url("/assets/images/404/5.png");
+    width: 100%;
+    height: 100vh;
+  }
+
+  &__section {
+    width: 60%;
+    background-color: $color-white;
+    padding: 5rem;
+  }
+
+  &__image-404 {
+    width: 100%;
+    display: block;
+  }
+
+  &__content {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  &__title {
+    font-weight: 400;
+    color: $color-black-2;
+  }
+
+  &__content-vertical {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+
+  &__content-item {
+    @include styleList($font-size: 1.5rem);
+    text-transform: uppercase;
+  }
+
+  &__content-link {
+    @include link;
+  }
+}
