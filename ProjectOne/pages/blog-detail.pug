@@ -4,6 +4,12 @@ include components/blog-detail/main
 include components/common/header
 
 block main
-    +header
-    +main
-    
+  -
+    const header = {
+        title: 'Blog',
+        classes: 'blogs__header',
+        paths: ["Home", "Blog"]
+    };
+
+  +header(header)
+  +main

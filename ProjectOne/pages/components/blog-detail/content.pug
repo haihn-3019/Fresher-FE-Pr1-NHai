@@ -1,11 +1,11 @@
-include ../common/form
 include ../common/blog
+include ../common/form
 
 mixin content
   -
     const form = {
       legend: "Đóng góp ý kiến",
-      classes: 'blog-detail__form',
+      classes: "blog-detail__form",
       controls: [
         {
           text: "Tên*",
@@ -32,14 +32,18 @@ mixin content
             tag: "textarea",
             classes: "input__feedback",
             cols: 30,
-            rows: 10
+            rows: 10,
           },
         },
         {
           tag: "button",
-          type: "submit",
-          text: "Gửi ý kiến",
-          classes: 'btn-black blog-detail__submit'
+          buttons: [
+            {
+              type: "submit",
+              text: "Gửi ý kiến",
+              classes: "btn-black blog-detail__submit"
+            },
+          ],
         },
       ],
     };

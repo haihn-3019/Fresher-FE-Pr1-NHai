@@ -7,6 +7,11 @@
     margin-bottom: 2rem;
   }
 
+  &__para{
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
   &__control:not(:first-child) {
     margin-top: 3rem;
   }
@@ -28,8 +33,19 @@
   }
 
   &__cta {
+    @include flexbox;
     text-align: center;
+    margin-top: 2rem;
   }
+
+  &__link {
+    @include link;
+    font-weight: 600;
+  }
+}
+
+.form-basic {
+  margin-top: 4rem;
 }
 
 .form-contact {
