@@ -1,0 +1,74 @@
+include ../common/form
+
+mixin main
+  -
+    const form = {
+      legend: "Thông tin cá nhân",
+      classes: 'register__form',
+      controls: [
+        {
+          text: "Tên trước*",
+          classes: "register__label-firstname",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "register__input-firstname",
+          },
+        },
+        {
+          text: "Tên sau*",
+          classes: "register__label-lastname",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "register__input-lastname",
+          },
+        },
+        {
+          text: "Email*",
+          classes: "register__label-email",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "register__input-email",
+          },
+        },
+        {
+          text: "Mật khẩu*",
+          classes: "register__label-password",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "register__input-password",
+          },
+        },
+        {
+          text: "Xác nhận mật khẩu*",
+          classes: "register__label-password",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "register__input-password",
+          },
+        },
+        {
+          tag: "button",
+          buttons: [
+            {
+              type: "submit",
+              text: "Gửi",
+              classes: 'btn-black register__submit'
+            },
+            {
+              type: "button",
+              text: "Quay lại",
+              classes: 'btn-black register__goback'
+            },
+          ],
+        },
+      ],
+    };
+
+  .section__main.register__main.register__main
+    +formBasic(form)
+  

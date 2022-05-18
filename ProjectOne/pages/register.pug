@@ -1,0 +1,14 @@
+extends templates/default
+
+include components/common/header
+include components/register/main
+
+block main
+  -
+    const header = {
+        title: 'Đăng ký',
+        classes: 'register__header',
+        paths: ["Home", "Đăng ký"]
+    };
+  +header(header)
+  +main
