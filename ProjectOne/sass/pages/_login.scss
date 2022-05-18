@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.login {
+  &__title-box {
+    @include center-section;
+    @include flexbox($align-items: flex-end);
+  }
+}
+
+.login__form {
+  .form__legend {
+    margin-bottom: 1rem;
+  }
+
+  .form__para {
+    margin-bottom: 4rem;
+  }
+
+  .form__cta {
+    text-align: initial;
+    justify-content: initial;
+    gap: 0 2rem;
+  }
+
+  .form__control {
+    width: 50%;
+  }
+}
