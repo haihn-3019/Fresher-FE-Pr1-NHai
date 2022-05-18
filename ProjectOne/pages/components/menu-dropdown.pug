@@ -1,0 +1,24 @@
+mixin menuItems(items)
+  ul
+    each item, index in items
+      li.menu__item
+        a.menu__link.nav-link(href="#")= item
+
+mixin menuDropdown(menuItems)
+  - let i = 1;
+  ul.dropdown-menu(aria-labelledby="navbarDropdown")
+    each items, title in menuItems
+      li(class=`menu-${i++}`)
+        h4.menu__title.text-uppercase= title
+        +menuItems(items)
+
+mixin itemDropdown(name, menuItems)
+  li.nav-item.dropdown
+    a#navbarDropdown.nav-link.dropdown-toggle(
+      href="#",
+      role="button",
+      data-bs-toggle="dropdown",
+      aria-expanded="false"
+    )
+      | #{ name }
+    +menuDropdown(menuItems)

@@ -3,8 +3,6 @@
 .blog-detail {
   &__main {
     @include flexbox;
-    @include center-section;
-    grid-row: 3 / 4;
     margin-top: 4rem;
   }
 
@@ -26,6 +24,7 @@
 
   &__form .form__cta {
     margin: 2rem 0 0 10%;
+    display: block;
   }
 
   &__blog {

@@ -1,5 +1,12 @@
 include button
 
+mixin ctaControls(control)
+  each button in control.buttons
+    if button.type == 'link'
+      a.form__link(href=button.link)= button.text
+    else
+      +buttonBasic(button.text, button.classes, button.type)
+
 mixin inputCustom(input)
   case input.tag
     when 'textarea'
@@ -15,7 +22,7 @@ mixin controls(control)
   case control.tag
     when 'button'
       .form__cta
-        +buttonBasic(control.text, control.classes, control.type)
+        +ctaControls(control)
     default
       .form__control 
         label(class=`form__label ${control.classes}`) 
@@ -25,7 +32,10 @@ mixin controls(control)
 mixin formBasic(form)
   form(action="#", class=`form form-basic ${form.classes}`)
     fieldset.form__fieldset 
-      legend.form__legend= form.legend
+      if form.legend
+        legend.form__legend= form.legend
+      if form.para
+        p.form__para= form.para
       each control in form.controls
         +controls(control)
 
