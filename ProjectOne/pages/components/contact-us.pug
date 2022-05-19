@@ -31,12 +31,12 @@ mixin socialMediaItems
       }
     ];
 
-  .contact__social-media
-    ul.contact__social-media-items 
+  .contact-us__social-media
+    ul.contact-us__social-media-items 
       each item in items
-        li.contact__social-media-item
+        li.contact-us__social-media-item
           i(class=`${item.icon} contact__icon`)
-          span.contact__icon-name= item.name
+          span.contact-us__icon-name= item.name
 
 mixin tagItems
   -
@@ -46,21 +46,21 @@ mixin tagItems
       "Trẻ em", "Thời trang nữ", "Trẻ em", "Thời trang nữ"
     ];
 
-  .contact__tags-box
+  .contact-us__tags-box
     +tags(items)
 
 mixin descriptionAboutUs
   - const para = "Hi, chào các nàng... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt. Hi, chào các nàng ... sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.sau khá nhiều lời hứa hão thì hôm nay tớ quay lại hâm nóng cái Blog này vào một ngày đầu hè nóng oi bức, khi mà dân tình xô nhau đi tắm Free để giải nhiệt.";
   - const title = "Giới thiệu chung về Mỹ phẩm Handmade mandala";
 
-  .contact__card.contact__about-us
-    h2.contact__title Về chúng tôi
-    .contact__description
-      .contact__logo
+  .contact-us__card.contact-us__about-us
+    h2.contact-us__title Về chúng tôi
+    .contact-us__description
+      .contact-us__logo
         img(src="/assets/images/common/logo.png", alt="logo")
-      h5.contact__description-title= title
-      p.contact__para= para
-      a.contact__link Xem thêm
+      h5.contact-us__description-title= title
+      p.contact-us__para= para
+      a.contact-us__link Xem thêm
 
 mixin descriptionBlog
   -
@@ -73,8 +73,8 @@ mixin descriptionBlog
       commentTotal: '23 bình luận'
     };
 
-  .contact__card.contact__blog
-    h2.contact__title Blog
+  .contact-us__card.contact-us__blog
+    h2.contact-us__title Blog
     +blog(item)
 
 mixin descriptionSendEmail
@@ -88,24 +88,24 @@ mixin descriptionSendEmail
       },
       button:{
         text: 'Gửi',
-        classes: 'btn-black form-contact__cta-send',
+        classes: 'btn-black form-contact-us__cta-send',
       }
     };
 
-  .contact__card.contact__send-email
-    .contact__card-top
-      h2.contact__title Gửi email cho chúng tôi
-      .contact__description
+  .contact-us__card.contact__send-email
+    .contact-us__card-top
+      h2.contact-us__title Gửi email cho chúng tôi
+      .contact-us__description
         +formContact(form)
-    .contact__card-bottom
-      h2.contact__title Tag sản phẩm
-      .contact__description
+    .contact-us__card-bottom
+      h2.contact-us__title Tag sản phẩm
+      .contact-us__description
         +tagItems
 
 mixin contact
-  section.contact
+  section.contact-us
     +socialMediaItems
-    .contact__content
+    .contact-us__content
       +descriptionAboutUs
       +descriptionBlog
       +descriptionSendEmail

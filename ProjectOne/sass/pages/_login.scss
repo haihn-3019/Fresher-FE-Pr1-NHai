@@ -1,15 +1,6 @@
-@use "../abstracts" as *;
-
-.login {
-  &__title-box {
-    @include center-section;
-    @include flexbox($align-items: flex-end);
-  }
-}
-
 .login__form {
   .form__legend {
-    margin-bottom: 1rem;
+    margin: 0;
   }
 
   .form__para {

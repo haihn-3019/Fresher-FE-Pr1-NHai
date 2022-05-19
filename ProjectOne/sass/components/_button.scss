@@ -2,6 +2,7 @@
 
 .btn {
   text-transform: uppercase;
+  display: inline-block;
 
   &-black {
     @include button(

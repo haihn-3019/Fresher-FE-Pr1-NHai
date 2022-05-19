@@ -11,7 +11,7 @@ mixin inputCustom(input)
   case input.tag
     when 'textarea'
       textarea(
-        class=`form__textarea ${input.classes}`,
+        class=`form__input form__textarea ${input.classes}`,
         cols=input.cols,
         rows=input.rows
       ) 
@@ -51,7 +51,7 @@ mixin formContact(form)
       +buttonBasic(form.button.text, form.button.classes)
 
 mixin formCta
-  form.form__cta
+  form.form-cta
     i.fa-solid.fa-cart-shopping
     i.fa-solid.fa-magnifying-glass
 

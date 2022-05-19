@@ -28,10 +28,6 @@
     @include input($font-size: 1.5rem, $width: 90%, $padding: 0.5rem 1rem);
   }
 
-  &__textarea {
-    @extend .form__input;
-  }
-
   &__cta {
     @include flexbox;
     text-align: center;

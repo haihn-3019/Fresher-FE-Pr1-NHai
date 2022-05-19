@@ -1,0 +1,54 @@
+include ../common/form
+
+mixin main
+  -
+    const form = {
+      legend: "Gửi email cho chúng tôi",
+      classes: "contact__form",
+      controls: [
+        {
+          text: "Tên*",
+          classes: "label__name",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "input__name",
+          },
+        },
+        {
+          text: "Email*",
+          classes: "label__email",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "input__email",
+          },
+        },
+        {
+          text: "Tin nhắn*",
+          classes: "label__feedback",
+          input: {
+            tag: "textarea",
+            classes: "input__feedback",
+            cols: 30,
+            rows: 10,
+          },
+        },
+        {
+          tag: "button",
+          buttons: [
+            {
+              type: "submit",
+              text: "Gửi ý kiến",
+              classes: "btn-black blog-detail__submit"
+            },
+          ],
+        },
+      ],
+    };
+
+  .section__main.about-us__main.contact__main
+    .contact__image-box
+      img.about-us__image(src="/assets/images/contact/1.png", alt="18+")
+    .contact__content
+      +formBasic(form)
