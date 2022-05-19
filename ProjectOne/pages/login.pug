@@ -1,0 +1,14 @@
+extends templates/default
+
+include components/common/header
+include components/login/main
+
+block main
+  -
+    const header = {
+        title: 'Đăng nhập',
+        classes: 'login__header',
+        paths: ["Home", "Đăng nhập"]
+    };
+  +header(header)
+  +main

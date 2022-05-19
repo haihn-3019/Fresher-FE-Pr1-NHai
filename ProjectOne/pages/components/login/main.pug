@@ -1,0 +1,48 @@
+include ../common/form
+
+mixin main
+  -
+    const form = {
+      legend: "Khánh hàng đăng ký",
+      para: 'Nếu bạn có một tài khoản, xin vui lòng đăng nhập',
+      classes:  'register__form login__form',
+      controls: [
+        {
+          text: "Địa chỉ Email*",
+          classes: "register__label-email",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "register__input-email",
+          },
+        },
+        {
+          text: "Password*",
+          classes: "register__label-password",
+          input: {
+            tag: "input",
+            type: "text",
+            classes: "register__input-password",
+          },
+        },
+        {
+          tag: "button",
+          buttons: [
+            {
+              type: "link",
+              text: "Quên mật khẩu ?",
+              classes: 'btn-black register__forgotpass'
+            },
+            {
+              type: "submit",
+              text: "Đăng nhập",
+              classes: 'btn-black register__submit'
+            },
+
+          ],
+        },
+      ],
+    };
+
+  .section__main.register__main.login__main
+    +formBasic(form)
