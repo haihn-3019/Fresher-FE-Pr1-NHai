@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+
+.contact {
+  &__form {
+    margin: 0;
+  }
+
+  &__form .form__legend {
+    font-size: 1.5rem;
+  }
+
+  &__form .form__input {
+    border: 1px solid $color-gray-3;
+  }
+
+  &__form .form__label {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  &__form .form__input {
+    width: 85%;
+    height: 3rem;
+    font-size: inherit;
+  }
+
+  &__form .form__textarea {
+    height: 12rem;
+  }
+
+  &__form .form__cta {
+    text-align: right;
+    display: block;
+  }
+}

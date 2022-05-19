@@ -1,0 +1,15 @@
+extends templates/default
+
+include components/common/header
+include components/contact/main
+
+block main
+  -
+    const header = {
+        title: 'Liên hệ',
+        classes: 'contact__header',
+        paths: ["Home", "Liên hệ"]
+    };
+
+  +header(header)
+  +main
