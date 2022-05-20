@@ -1,0 +1,63 @@
+mixin thead
+  - const thList = ["Ảnh", "Tên sản phẩm", "Giá", "Số lượng", "Tổng số", "Xóa"];
+
+  thead
+    tr
+      each th in thList
+        th(scope="col")= th
+
+mixin tbody
+  -
+    const trList = [
+      {
+        image: '/assets/images/shopping-cart/1.png',
+        productName: "Lắc tay D&G",
+        price: 'Giá',
+        amount: 1,
+        total: '345.000đ',
+        icon: 'fa-solid fa-trash-can',
+      },
+      {
+        image: '/assets/images/shopping-cart/1.png',
+        productName: "Lắc tay D&G",
+        price: 'Giá',
+        amount: 1,
+        total: '345.000đ',
+        icon: 'fa-solid fa-trash-can',
+      },
+      {
+        image: '/assets/images/shopping-cart/1.png',
+        productName: "Lắc tay D&G",
+        price: 'Giá',
+        amount: 1,
+        total: '345.000đ',
+        icon: 'fa-solid fa-trash-can',
+      },
+      {
+        image: '/assets/images/shopping-cart/1.png',
+        productName: "Lắc tay D&G",
+        price: 'Giá',
+        amount: 1,
+        total: '345.000đ',
+        icon: 'fa-solid fa-trash-can',
+      },
+    ];
+
+  tbody
+    each td in trList
+      tr
+        td(data-label="image")
+          img(src=td.image, alt="18+")
+        td(data-label="product-name")= td.productName
+        td(data-label="price")= td.price
+        td(data-label="amount")= td.amount
+        td(data-label="total")= td.total
+        td(data-label="deleted")
+          a(href="#")
+            i.fa-solid.fa-trash-can
+
+mixin main
+  .section__main.shopping-cart__main
+    table
+      +thead
+      +tbody

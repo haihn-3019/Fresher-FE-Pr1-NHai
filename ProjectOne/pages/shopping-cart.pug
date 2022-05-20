@@ -1,0 +1,14 @@
+extends templates/default
+
+block main
+  -
+    const header = {
+        title: 'Giỏ hàng',
+        classes: 'shopping-cart__header',
+        paths: ["Home", "Sản phẩm", 'Trang sức']
+    };
+
+  +header(header)
+  +main
+  
+
